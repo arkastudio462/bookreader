@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PerpusKita — Baca, beli, dan terbitkan buku digital</title>
+<meta name="description" content="Toko buku digital dengan reader EPUB dan PDF di browser, flash sale, voucher, poin reward, dan bagi hasil transparan untuk penulis dan penerbit.">
+<meta property="og:title" content="PerpusKita — Platform buku digital">
+<meta property="og:description" content="Baca, beli, dan terbitkan buku. Semuanya di satu tempat.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink:'#141414', soft:'#f3f3f3', field:'#f0f0f0', hair:'#e0e0e0', hairs:'#f0f0f0', muted:'#707070', faint:'#adadad', accent:'#0066ff' },
+  borderRadius: { sm:'16px', md:'24px' },
+  fontFamily: { sans:['Inter','-apple-system','Helvetica Neue','Arial','sans-serif'] }
+}}}
+</script>
+<style>
+  body{font-weight:450;color:#141414;background:#fff;letter-spacing:0}
+  .h{font-weight:650;line-height:1.05;letter-spacing:0}
+  .lt{font-weight:300}
+  .lk{font-weight:600}
+  .sq{border-radius:30%}
+  :focus-visible{outline:2px solid #141414;outline-offset:2px}
+  .field:focus{outline:none;box-shadow:0 0 0 2px #141414}
+  .marquee{animation:mq 50s linear infinite}
+  @keyframes mq{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee{animation:none}}
+  .seg-on{background:#fff;color:#141414;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .seg-off{color:#707070}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<!-- NAV -->
+<header class="sticky top-3 z-40 px-3">
+  <nav class="mx-auto flex max-w-3xl items-center justify-between rounded-full bg-soft py-2 pl-3 pr-2" aria-label="Navigasi utama">
+    <a href="#" class="flex items-center gap-2 lk">
+      <span class="sq grid h-8 w-8 place-items-center bg-ink text-sm text-white h">P</span>PerpusKita
+    </a>
+    <div class="hidden items-center gap-6 text-[15px] lk md:flex">
+      <a href="#katalog">Katalog</a><a href="#flash-sale">Flash sale</a><a href="#penulis">Penulis &amp; penerbit</a><a href="#masuk">Masuk</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="#daftar" class="lk inline-flex h-10 items-center rounded-full bg-ink px-4 text-sm text-white">Daftar gratis</a>
+      <button id="menuBtn" class="grid h-10 w-10 place-items-center rounded-full bg-white md:hidden" aria-label="Buka menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="menu" class="mx-auto mt-2 hidden max-w-3xl flex-col gap-1 rounded-md bg-soft p-3 lk md:hidden">
+    <a class="rounded-full px-4 py-3" href="#katalog">Katalog</a><a class="rounded-full px-4 py-3" href="#flash-sale">Flash sale</a><a class="rounded-full px-4 py-3" href="#penulis">Penulis &amp; penerbit</a><a class="rounded-full px-4 py-3" href="#masuk">Masuk</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="px-5 pb-10 pt-16 text-center md:pt-24">
+  <h1 class="h mx-auto max-w-4xl text-5xl sm:text-6xl md:text-[80px]">Baca, beli, dan terbitkan buku. Semuanya di satu tempat.</h1>
+  <p class="lt mx-auto mt-6 max-w-xl text-xl leading-snug text-muted">Toko buku digital dengan reader EPUB dan PDF langsung di browser, promo yang rutin datang, dan bagi hasil yang jelas untuk penulis dan penerbit.</p>
+
+  <div id="guestCta" class="mt-9 flex flex-wrap items-center justify-center gap-3">
+    <a href="#katalog" class="lk inline-flex h-12 items-center rounded-full bg-ink px-6 text-white">Mulai membaca</a>
+    <a href="#daftar" class="lk inline-flex h-12 items-center rounded-full border border-hair bg-white px-6">Daftar penulis</a>
+    <a href="#penulis" class="lk inline-flex h-12 items-center rounded-full bg-soft px-6">Jadi penerbit ↗</a>
+  </div>
+
+  <div id="continueCard" class="mx-auto mt-9 hidden max-w-md items-center gap-4 rounded-md bg-soft p-4 text-left">
+    <div id="continueCover" class="w-16 shrink-0"></div>
+    <div class="min-w-0 flex-1">
+      <p class="lk">Lanjutkan membaca</p>
+      <p class="truncate text-sm text-muted">Hujan di Atas Kota Lama · Bab 7</p>
+      <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-white"><div class="h-full w-[62%] rounded-full bg-ink"></div></div>
+      <p class="mt-1 text-xs text-muted">62% selesai</p>
+    </div>
+    <a href="#" class="lk inline-flex h-10 items-center rounded-full bg-ink px-4 text-sm text-white">Buka</a>
+  </div>
+</section>
+
+<!-- MARQUEE COVERS -->
+<section class="overflow-hidden py-6" aria-label="Buku pilihan">
+  <div id="marquee" class="marquee flex w-max gap-4 pr-4"></div>
+</section>
+
+<!-- FLASH SALE -->
+<section id="flash-sale" class="mx-auto max-w-6xl px-5 pt-20">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <div>
+      <span class="lk inline-flex h-7 items-center rounded-full bg-accent px-3 text-xs text-white">Flash sale</span>
+      <h2 class="h mt-4 text-4xl md:text-[44px]">Harga turun, waktunya terbatas.</h2>
+      <p class="lt mt-3 text-xl text-muted">Harga kembali normal saat hitung mundur selesai.</p>
+    </div>
+    <div class="flex items-center gap-2" role="timer" aria-label="Sisa waktu flash sale">
+      <div class="grid h-16 w-16 place-items-center rounded-sm bg-soft text-center"><div><b id="cdH" class="h block text-2xl">00</b><span class="text-xs text-muted">jam</span></div></div>
+      <div class="grid h-16 w-16 place-items-center rounded-sm bg-soft text-center"><div><b id="cdM" class="h block text-2xl">00</b><span class="text-xs text-muted">menit</span></div></div>
+      <div class="grid h-16 w-16 place-items-center rounded-sm bg-soft text-center"><div><b id="cdS" class="h block text-2xl">00</b><span class="text-xs text-muted">detik</span></div></div>
+    </div>
+  </div>
+  <div id="flashGrid" class="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4 lg:grid-cols-5"></div>
+</section>
+
+<!-- KOLEKSI & KATEGORI -->
+<section class="mx-auto max-w-6xl px-5 pt-28">
+  <h2 class="h max-w-xl text-4xl md:text-[44px]">Jelajahi menurut kategori.</h2>
+  <p class="lt mt-3 text-xl text-muted">Ribuan judul dari penulis dan penerbit mandiri.</p>
+  <div id="catGrid" class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6"></div>
+</section>
+
+<!-- KATALOG -->
+<section id="katalog" class="mx-auto max-w-6xl px-5 pt-28">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <div>
+      <h2 class="h text-4xl md:text-[44px]">Pilihan untuk dibaca hari ini.</h2>
+      <p class="lt mt-3 text-xl text-muted">Satu buku gratis setiap bulan, dipilih tim kami.</p>
+    </div>
+    <div class="inline-flex rounded-full bg-soft p-1" role="tablist" id="tabs">
+      <button role="tab" data-tab="top" class="lk seg-on h-10 rounded-full px-5 text-sm" aria-selected="true">Terlaris</button>
+      <button role="tab" data-tab="new" class="lk seg-off h-10 rounded-full px-5 text-sm" aria-selected="false">Terbaru</button>
+    </div>
+  </div>
+  <div id="bookGrid" class="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4"></div>
+  <div class="mt-10 text-center"><a href="#" class="lk inline-flex h-12 items-center rounded-full border border-hair px-6">Lihat semua buku</a></div>
+</section>
+
+<!-- KEUNGGULAN + STATISTIK -->
+<section class="mx-auto max-w-6xl px-5 pt-28">
+  <h2 class="h max-w-2xl text-4xl md:text-[44px]">Dibuat agar pembaca betah dan penulis dibayar adil.</h2>
+  <div class="mt-10 grid gap-5 md:grid-cols-3">
+    <article class="rounded-md bg-soft p-6"><h3 class="h text-2xl">Reader yang nyaman.</h3><p class="mt-3 text-muted">Baca EPUB dan PDF tanpa aplikasi. Progres tersimpan di semua perangkat, lengkap dengan bookmark, highlight, dan tema terang, sepia, atau gelap.</p></article>
+    <article class="rounded-md border border-hairs p-6"><h3 class="h text-2xl">Voucher dan poin.</h3><p class="mt-3 text-muted">Pakai voucher dan tukar poin reward saat checkout. Poin didapat dari pembelian, streak membaca, dan ulasan.</p></article>
+    <article class="rounded-md bg-soft p-6"><h3 class="h text-2xl">Royalti transparan.</h3><p class="mt-3 text-muted">Setiap penjualan tercatat per transaksi. Penulis dan penerbit melihat saldo, riwayat, dan bisa menarik dana kapan saja.</p></article>
+  </div>
+  <dl id="stats" class="mt-16 grid grid-cols-3 gap-4 text-center"></dl>
+</section>
+
+<!-- PENULIS & PENERBIT -->
+<section id="penulis" class="mx-auto max-w-5xl px-5 pt-28">
+  <div class="text-center">
+    <h2 class="h text-4xl md:text-[44px]">Terbitkan bukumu hari ini.</h2>
+    <p class="lt mx-auto mt-3 max-w-lg text-xl text-muted">Akun penulis dan penerbit langsung aktif saat mendaftar, tanpa menunggu verifikasi.</p>
+  </div>
+  <div class="mt-10 grid gap-5 md:grid-cols-2">
+    <article class="flex flex-col rounded-md border border-hairs p-6">
+      <h3 class="h text-2xl">Penulis</h3>
+      <p class="mt-2 text-muted">Untuk kamu yang ingin menjual karya sendiri.</p>
+      <ul class="mt-5 flex-1 space-y-3 text-sm" id="authorList"></ul>
+      <a href="#daftar" class="lk mt-6 inline-flex h-12 items-center justify-center rounded-full border border-hair">Daftar sebagai penulis</a>
+    </article>
+    <article class="flex flex-col rounded-md bg-soft p-6">
+      <div class="flex items-center gap-3"><h3 class="h text-2xl">Penerbit</h3><span class="lk inline-flex h-7 items-center rounded-full bg-accent px-3 text-xs text-white">Bagi hasil</span></div>
+      <p class="mt-2 text-muted">Semua fitur penulis, ditambah kemitraan dan voucher.</p>
+      <ul class="mt-5 flex-1 space-y-3 text-sm" id="pubList"></ul>
+      <a href="#daftar" class="lk mt-6 inline-flex h-12 items-center justify-center rounded-full bg-ink text-white">Daftar sebagai penerbit</a>
+    </article>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="mx-auto max-w-6xl px-5 pt-28">
+  <h2 class="h max-w-xl text-4xl md:text-[44px]">Kata mereka yang sudah mencoba.</h2>
+  <div id="testi" class="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-4"></div>
+  <p class="mt-4 text-xs text-faint">Testimoni di atas adalah contoh, ganti dengan ulasan asli sebelum rilis.</p>
+</section>
+
+<!-- CTA + NEWSLETTER -->
+<section id="daftar" class="mx-auto max-w-3xl px-5 py-28 text-center">
+  <h2 class="h text-4xl md:text-[56px]">Mulai membaca malam ini.</h2>
+  <p class="lt mt-4 text-xl text-muted">Daftar gratis, lalu simpan wishlist dan dapatkan kabar flash sale pertamamu.</p>
+  <div class="mt-8 flex flex-wrap justify-center gap-3">
+    <a href="#" class="lk inline-flex h-12 items-center rounded-full bg-ink px-6 text-white">Daftar gratis</a>
+    <a href="#" id="masuk" class="lk inline-flex h-12 items-center rounded-full border border-hair px-6">Masuk</a>
+  </div>
+  <form id="nlForm" class="mx-auto mt-14 flex max-w-md flex-col gap-3 sm:flex-row" novalidate>
+    <label class="sr-only" for="nlEmail">Alamat email</label>
+    <input id="nlEmail" type="email" placeholder="Email kamu" class="field h-12 flex-1 rounded-sm bg-field px-4 placeholder:text-faint">
+    <button class="lk h-12 rounded-full bg-ink px-6 text-white">Berlangganan</button>
+  </form>
+  <p id="nlMsg" class="mt-3 min-h-5 text-sm text-muted" aria-live="polite">Kabar promo dan buku baru, sebulan sekali.</p>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="rounded-t-md bg-ink px-6 pb-10 pt-16 text-white">
+  <div class="mx-auto max-w-6xl">
+    <p class="h text-6xl md:text-[80px]">PerpusKita.</p>
+    <div class="mt-8 flex flex-wrap justify-between gap-10">
+      <p class="max-w-xs text-faint">Platform digital buku untuk pembaca, penulis, dan penerbit Indonesia.</p>
+      <div class="grid grid-cols-2 gap-x-16 gap-y-3 text-sm">
+        <a href="#" class="lk">Tentang</a><a href="#" class="text-faint">Instagram</a>
+        <a href="#" class="lk">Bantuan</a><a href="#" class="text-faint">YouTube</a>
+        <a href="#" class="text-faint">Syarat dan ketentuan</a><a href="#" class="text-faint">TikTok</a>
+        <a href="#" class="text-faint">Kebijakan privasi</a><a href="#" class="text-faint">X</a>
+      </div>
+    </div>
+    <p class="mt-12 text-xs text-faint">© 2026 PerpusKita. Semua hak dilindungi.</p>
+  </div>
+</footer>
+
+<!-- Pratinjau status login (FR-4.1.7), hapus saat integrasi -->
+<div class="fixed bottom-4 left-4 z-50 inline-flex rounded-full bg-soft p-1 text-xs" id="authPreview" role="group" aria-label="Pratinjau status login">
+  <button data-a="0" class="lk seg-on h-8 rounded-full px-3">Tamu</button>
+  <button data-a="1" class="lk seg-off h-8 rounded-full px-3">Sudah masuk</button>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const rp = n => 'Rp' + n.toLocaleString('id-ID');
+
+/* ---- Data contoh (ganti dengan data dari backend) ---- */
+const FLASH_SALE_END = Date.now() + (5 * 3600 + 42 * 60) * 1000; // ganti dengan waktu selesai dari server
+const books = [
+  {t:'Hujan di Atas Kota Lama', a:'Laras Wulandari', c:'Fiksi', p:89000, d:0, r:4.8, h:215, f:''},
+  {t:'Kopi, Kota, dan Kamu', a:'Dimas Aryanto', c:'Fiksi', p:75000, d:52000, r:4.6, h:25, f:'flash', sold:68},
+  {t:'Dasar Bisnis Warung', a:'Sari Pratiwi', c:'Bisnis', p:99000, d:69000, r:4.7, h:150, f:'flash', sold:41},
+  {t:'Peta Nusantara Lama', a:'Penerbit Lentera', c:'Sejarah', p:120000, d:84000, r:4.9, h:35, f:'flash', sold:83},
+  {t:'Menulis Tanpa Takut', a:'Bagas Santoso', c:'Pengembangan diri', p:65000, d:0, r:4.5, h:285, f:'free'},
+  {t:'Resep Rumah Nenek', a:'Ibu Wati', c:'Kuliner', p:58000, d:40000, r:4.4, h:10, f:'flash', sold:27},
+  {t:'Belajar Laravel Praktis', a:'Nahla Putri', c:'Teknologi', p:149000, d:99000, r:4.8, h:240, f:'flash', sold:55},
+  {t:'Sebelum Senja Tiba', a:'Raka Mahendra', c:'Fiksi', p:79000, d:0, r:4.3, h:330, f:''},
+  {t:'Anak Pesisir', a:'Yulia Rahma', c:'Anak', p:49000, d:0, r:4.7, h:190, f:''},
+  {t:'Keuangan untuk Pemula', a:'Hendra Wijaya', c:'Bisnis', p:92000, d:0, r:4.6, h:170, f:''},
+  {t:'Jejak Majapahit', a:'Penerbit Lentera', c:'Sejarah', p:110000, d:0, r:4.5, h:45, f:''},
+  {t:'Cerita Sebelum Tidur', a:'Dewi Anggraini', c:'Anak', p:45000, d:0, r:4.9, h:310, f:''}
+];
+const cats = [['📖','Fiksi','1.240'],['💼','Bisnis','860'],['🏛️','Sejarah','520'],['🌱','Pengembangan diri','740'],['💻','Teknologi','610'],['🧒','Anak','430']];
+const stats = [['12.480','Buku tersedia'],['3.250','Penulis dan penerbit'],['86.000','Pembaca aktif']];
+const authorPerks = ['Unggah EPUB atau PDF dan cover dari browser','Atur diskon per buku dengan jadwal sendiri','Pantau penjualan dan royalti, ekspor ke CSV','Tarik dana langsung dari dashboard'];
+const pubPerks = ['Semua fitur penulis','Ajukan kemitraan dengan penulis, bagi hasil per buku','Buat voucher untuk buku imprint dan mitra','Tandai buku mitra sebagai unggulan'];
+const testi = [
+  ['Rina A.','Pembaca','Lanjut baca di HP persis di halaman terakhir laptop. Sepele, tapi bikin saya pindah dari aplikasi lain.'],
+  ['Dimas Aryanto','Penulis','Daftar sore, bukunya saya unggah malam itu juga. Laporan royalti per transaksinya jelas.'],
+  ['Penerbit Lentera','Penerbit','Kemitraan dengan penulis baru jadi mudah. Persentase bagi hasil terlihat jelas untuk kedua pihak.'],
+  ['Sari P.','Pembaca','Poin dari ulasan bisa dipakai potong harga. Flash sale jam tujuh malam jadi kebiasaan.']
+];
+
+/* ---- Cover buku (dibuat dari kode, ganti dengan gambar asli) ---- */
+function cover(b, cls = '') {
+  const bg = `hsl(${b.h} 45% 32%)`, fg = `hsl(${b.h} 60% 88%)`;
+  return `<div class="relative aspect-[3/4] overflow-hidden rounded-sm ${cls}" style="background:${bg};color:${fg}">
+    <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 90 120" preserveAspectRatio="none" aria-hidden="true"><circle cx="70" cy="30" r="34" fill="${fg}"/><circle cx="20" cy="110" r="28" fill="none" stroke="${fg}" stroke-width="3"/></svg>
+    <div class="relative flex h-full flex-col justify-between p-3"><p class="h text-[15px] leading-tight">${b.t}</p><p class="text-[11px] opacity-80">${b.a}</p></div></div>`;
+}
+const heart = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.3-9.2C1.2 8.6 3 5 6.4 5c2 0 3.6 1.1 4.6 2.7h2C14 6.1 15.600 5 17.600 5 21 5 22.800 8.600 21.300 11.800 19 16.400 12 21 12 21z"/></svg>`;
+
+function card(b, opts = {}) {
+  const price = b.d ? `<span class="lk">${rp(b.d)}</span> <s class="text-sm text-faint">${rp(b.p)}</s>` : `<span class="lk">${b.f === 'free' ? 'Gratis' : rp(b.p)}</span>`;
+  const pct = b.d ? Math.round((1 - b.d / b.p) * 100) : 0;
+  const badges = [pct ? `Diskon ${pct}%` : '', b.f === 'free' ? 'Buku bulan ini' : ''].filter(Boolean)
+    .map(x => `<span class="lk inline-flex h-6 items-center rounded-full px-2.5 text-xs text-white" style="background:rgba(115,115,115,.56)">${x}</span>`).join('');
+  return `<article class="group">
+    <div class="relative">${cover(b)}
+      <div class="absolute left-2 top-2 flex flex-col items-start gap-1">${badges}</div>
+      <button class="wish absolute right-2 top-2 grid h-9 w-9 place-items-center rounded-full bg-white text-ink" aria-label="Simpan ${b.t} ke wishlist" aria-pressed="false">${heart}</button>
+    </div>
+    <h3 class="lk mt-3 truncate">${b.t}</h3>
+    <p class="truncate text-sm text-muted">${b.a} · ★ ${b.r}</p>
+    <p class="mt-1">${price}</p>
+    ${opts.sold ? `<div class="mt-2 h-1.5 overflow-hidden rounded-full bg-soft"><div class="h-full rounded-full bg-ink" style="width:${b.sold}%"></div></div><p class="mt-1 text-xs text-muted">Terjual ${b.sold}%</p>` : ''}
+  </article>`;
+}
+
+/* ---- Render ---- */
+$('#marquee').innerHTML = [...books, ...books].map(b => `<div class="w-36 shrink-0 md:w-44">${cover(b)}</div>`).join('');
+$('#flashGrid').innerHTML = books.filter(b => b.f === 'flash').slice(0, 5).map(b => card(b, {sold: true})).join('');
+$('#catGrid').innerHTML = cats.map(([i, n, c]) => `<a href="#katalog" class="flex flex-col items-center gap-3 rounded-md bg-soft px-3 py-6 text-center">
+  <span class="sq grid h-16 w-16 place-items-center bg-white text-3xl">${i}</span><span class="lk">${n}</span><span class="-mt-2 text-sm text-muted">${c} buku</span></a>`).join('');
+$('#stats').innerHTML = stats.map(([n, l]) => `<div><dd class="h text-4xl md:text-[56px]">${n}</dd><dt class="mt-2 text-muted">${l}</dt></div>`).join('');
+const li = t => `<li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span>${t}</span></li>`;
+$('#authorList').innerHTML = authorPerks.map(li).join('');
+$('#pubList').innerHTML = pubPerks.map(li).join('');
+$('#testi').innerHTML = testi.map(([n, r, q]) => `<figure class="mb-5 break-inside-avoid rounded-sm border border-hairs p-5">
+  <div class="flex items-center gap-3"><span class="lk grid h-10 w-10 place-items-center rounded-full bg-soft text-sm">${n[0]}</span>
+  <div><p class="lk">${n}</p><p class="text-sm text-muted">${r}</p></div></div><blockquote class="mt-4">${q}</blockquote></figure>`).join('');
+$('#continueCover').innerHTML = cover(books[0]);
+
+/* Katalog: tab Terlaris / Terbaru */
+const sets = { top: [...books].sort((a, b) => b.r - a.r).slice(0, 8), new: [...books].reverse().slice(0, 8) };
+function showTab(k) {
+  $('#bookGrid').innerHTML = sets[k].map(b => card(b)).join('');
+  document.querySelectorAll('#tabs button').forEach(x => {
+    const on = x.dataset.tab === k;
+    x.className = `lk h-10 rounded-full px-5 text-sm ${on ? 'seg-on' : 'seg-off'}`;
+    x.setAttribute('aria-selected', on);
+  });
+}
+$('#tabs').addEventListener('click', e => { const t = e.target.closest('button'); if (t) showTab(t.dataset.tab); });
+showTab('top');
+
+/* Wishlist */
+document.addEventListener('click', e => {
+  const w = e.target.closest('.wish'); if (!w) return;
+  const on = w.getAttribute('aria-pressed') !== 'true';
+  w.setAttribute('aria-pressed', on);
+  w.className = `wish absolute right-2 top-2 grid h-9 w-9 place-items-center rounded-full ${on ? 'bg-ink text-white' : 'bg-white text-ink'}`;
+  w.querySelector('svg').setAttribute('fill', on ? 'currentColor' : 'none');
+});
+
+/* Hitung mundur flash sale */
+function tick() {
+  let s = Math.max(0, Math.floor((FLASH_SALE_END - Date.now()) / 1000));
+  const p = n => String(n).padStart(2, '0');
+  $('#cdH').textContent = p(Math.floor(s / 3600)); $('#cdM').textContent = p(Math.floor(s % 3600 / 60)); $('#cdS').textContent = p(s % 60);
+  if (s === 0) { $('#flash-sale').style.display = 'none'; clearInterval(timer); }
+}
+const timer = setInterval(tick, 1000); tick();
+
+/* Menu mobile */
+$('#menuBtn').addEventListener('click', () => {
+  const m = $('#menu'), open = m.classList.toggle('hidden') === false;
+  m.classList.toggle('flex', open); $('#menuBtn').setAttribute('aria-expanded', open);
+});
+
+/* Pratinjau login: kartu "Lanjutkan membaca" menggantikan CTA tamu */
+$('#authPreview').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const on = b.dataset.a === '1';
+  $('#guestCta').classList.toggle('hidden', on);
+  $('#continueCard').classList.toggle('hidden', !on); $('#continueCard').classList.toggle('flex', on);
+  document.querySelectorAll('#authPreview button').forEach(x => x.className = `lk h-8 rounded-full px-3 ${x === b ? 'seg-on' : 'seg-off'}`);
+});
+
+/* Newsletter */
+$('#nlForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = $('#nlEmail').value.trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  $('#nlMsg').textContent = ok ? 'Terima kasih, kamu sudah terdaftar.' : 'Masukkan alamat email yang valid, misalnya nama@email.com.';
+  if (ok) $('#nlEmail').value = '';
+});
+</script>
+</body>
+</html>

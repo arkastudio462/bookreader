@@ -22,11 +22,16 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <Head title="Register" />
+        <Head title="Daftar" />
 
-        <form @submit.prevent="submit">
+        <h1 class="h text-3xl text-ink">Buat akun PerpusKita.</h1>
+        <p class="lt mt-2 text-sm text-muted">
+            Gratis. Mulai baca dalam satu menit.
+        </p>
+
+        <form class="mt-6 space-y-4" @submit.prevent="submit">
             <div>
-                <InputLabel for="name" value="Name" />
+                <InputLabel for="name" value="Nama" />
 
                 <TextInput
                     id="name"
@@ -41,7 +46,7 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.name" />
             </div>
 
-            <div class="mt-4">
+            <div>
                 <InputLabel for="email" value="Email" />
 
                 <TextInput
@@ -56,8 +61,8 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+            <div>
+                <InputLabel for="password" value="Kata sandi" />
 
                 <TextInput
                     id="password"
@@ -71,10 +76,10 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
-            <div class="mt-4">
+            <div>
                 <InputLabel
                     for="password_confirmation"
-                    value="Confirm Password"
+                    value="Konfirmasi kata sandi"
                 />
 
                 <TextInput
@@ -92,22 +97,23 @@ const submit = () => {
                 />
             </div>
 
-            <div class="mt-4 flex items-center justify-end">
-                <Link
-                    :href="route('login')"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                    Already registered?
-                </Link>
-
-                <PrimaryButton
-                    class="ms-4"
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Register
-                </PrimaryButton>
-            </div>
+            <PrimaryButton
+                class="w-full"
+                :class="{ 'opacity-50': form.processing }"
+                :disabled="form.processing"
+            >
+                Daftar gratis
+            </PrimaryButton>
         </form>
+
+        <p class="mt-6 text-center text-sm text-muted">
+            Sudah punya akun?
+            <Link
+                :href="route('login')"
+                class="lk text-ink underline hover:text-ink-soft"
+            >
+                Masuk
+            </Link>
+        </p>
     </GuestLayout>
 </template>

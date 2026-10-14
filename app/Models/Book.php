@@ -6,6 +6,7 @@ use App\Enums\BookStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Storage;
 
 class Book extends Model
 {
@@ -46,6 +47,19 @@ class Book extends Model
             'is_featured' => 'boolean',
             'published_at' => 'datetime',
         ];
+    }
+
+    public function getCoverUrlAttribute(): ?string
+    {
+        if (!$this->cover_path) {
+            return null;
+        }
+
+        try {
+            return Storage::disk('r2')->url($this->cover_path);
+        } catch (\Throwable $e) {
+            return null;
+        }
     }
 
     public function publisher(): BelongsTo

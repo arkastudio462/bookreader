@@ -1,7 +1,9 @@
 <script setup>
 import { Head, Link, router } from '@inertiajs/vue3';
-import { ref, watch } from 'vue';
-import BookPrice from '@/Components/BookPrice.vue';
+import { computed, ref, watch } from 'vue';
+import AppHeader from '@/Components/AppHeader.vue';
+import AppFooter from '@/Components/AppFooter.vue';
+import BookCard from '@/Components/BookCard.vue';
 
 const props = defineProps({
     books: Object,
@@ -15,93 +17,98 @@ const selectedCategory = ref(props.filters.category || '');
 const selectedSort = ref(props.filters.sort || 'newest');
 const onlyPromo = ref(props.filters.promo === true || props.filters.promo === '1' || props.filters.promo === 1);
 
+const query = computed(() => ({
+    search: search.value || undefined,
+    category: selectedCategory.value || undefined,
+    sort: selectedSort.value !== 'newest' ? selectedSort.value : undefined,
+    promo: onlyPromo.value ? 1 : undefined,
+}));
+
 function applyFilters() {
-    router.get(route('catalog.index'), {
-        search: search.value,
-        category: selectedCategory.value,
-        sort: selectedSort.value,
-        promo: onlyPromo.value ? 1 : undefined,
-    }, { preserveState: true, replace: true });
+    router.get(route('catalog.index'), query.value, { preserveState: true, replace: true });
 }
 
 watch([search, selectedCategory, selectedSort, onlyPromo], applyFilters);
 </script>
 
 <template>
-    <Head title="Katalog Buku - PerpusKita" />
+    <Head title="Katalog buku" />
 
-    <div class="min-h-screen bg-gray-50">
-        <!-- Header -->
-        <header class="bg-white shadow-sm">
-            <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between">
-                    <Link :href="route('landing')" class="text-2xl font-bold text-gray-900">PerpusKita</Link>
-                    <div class="flex items-center gap-4">
-                        <Link :href="route('catalog.index')" class="font-medium text-blue-600">Katalog</Link>
-                        <Link :href="route('login')" class="text-gray-700 hover:text-gray-900">Masuk</Link>
-                        <Link :href="route('register')" class="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Daftar</Link>
-                    </div>
-                </div>
-            </div>
-        </header>
+    <div class="flex min-h-screen flex-col bg-canvas">
+        <AppHeader />
 
-        <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between">
-                <h1 class="text-3xl font-bold text-gray-900">Katalog Buku</h1>
-                <p class="text-gray-600">{{ books.total }} buku ditemukan</p>
-            </div>
+        <main class="mx-auto w-full max-w-6xl flex-1 px-5 pt-16">
+            <header>
+                <span v-if="onlyPromo" class="badge-accent">Sedang promo</span>
+                <h1 class="h text-5xl md:text-[56px]">Katalog buku.</h1>
+                <p class="lt mt-4 max-w-xl text-xl text-muted">
+                    {{ books.total }} judul dari penulis dan penerbit mandiri Indonesia.
+                </p>
+            </header>
 
-            <!-- Filters -->
-            <div class="mt-6 flex flex-wrap items-center gap-4">
-                <input v-model="search" type="text" placeholder="Cari judul, penulis..."
-                    class="w-full rounded-lg border border-gray-300 px-4 py-2 sm:w-64" />
+            <!-- Filter bar -->
+            <div class="card-soft mt-10 flex flex-wrap items-center gap-3">
+                <label class="sr-only" for="catalog-search">Cari buku</label>
+                <input
+                    id="catalog-search"
+                    v-model="search"
+                    type="search"
+                    placeholder="Cari judul atau penulis…"
+                    class="field h-12 w-full sm:w-72"
+                />
 
-                <select v-model="selectedCategory" class="rounded-lg border border-gray-300 px-4 py-2">
-                    <option value="">Semua Kategori</option>
+                <label class="sr-only" for="catalog-category">Kategori</label>
+                <select id="catalog-category" v-model="selectedCategory" class="field h-12">
+                    <option value="">Semua kategori</option>
                     <option v-for="cat in categories" :key="cat.id" :value="cat.slug">{{ cat.name }}</option>
                 </select>
 
-                <select v-model="selectedSort" class="rounded-lg border border-gray-300 px-4 py-2">
+                <label class="sr-only" for="catalog-sort">Urutkan</label>
+                <select id="catalog-sort" v-model="selectedSort" class="field h-12">
                     <option value="newest">Terbaru</option>
                     <option value="bestseller">Terlaris</option>
                     <option value="cheapest">Termurah</option>
-                    <option value="rating">Rating Tertinggi</option>
+                    <option value="rating">Rating tertinggi</option>
                 </select>
 
-                <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-gray-300 px-4 py-2">
-                    <input v-model="onlyPromo" type="checkbox" class="rounded border-gray-300 text-blue-600" />
-                    <span class="text-sm text-gray-700">Sedang Promo</span>
-                </label>
+                <button
+                    type="button"
+                    class="lk h-12 rounded-full px-5 text-sm transition-colors"
+                    :class="onlyPromo ? 'bg-ink text-white' : 'bg-canvas text-ink hover:bg-field'"
+                    :aria-pressed="onlyPromo"
+                    @click="onlyPromo = !onlyPromo"
+                >
+                    Flash sale
+                </button>
             </div>
 
-            <!-- Book Grid -->
-            <div class="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-                <Link v-for="book in books.data" :key="book.id" :href="route('catalog.show', book.slug)" class="group">
-                    <div class="relative aspect-[2/3] overflow-hidden rounded-lg bg-gray-200">
-                        <div class="flex h-full items-center justify-center text-gray-400">Cover</div>
-                        <span v-if="book.on_promo"
-                            class="absolute left-2 top-2 rounded bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">
-                            {{ book.discount_source === 'flash' ? '⚡ Flash Sale' : 'Diskon' }}
-                        </span>
-                    </div>
-                    <h3 class="mt-2 font-medium text-gray-900 group-hover:text-blue-600">{{ book.title }}</h3>
-                    <p class="text-sm text-gray-600">{{ book.author_name }}</p>
-                    <div class="mt-1 flex items-center gap-2">
-                        <span class="text-sm text-yellow-500">★ {{ book.average_rating }}</span>
-                    </div>
-                    <div class="mt-1">
-                        <BookPrice :book="book" />
-                    </div>
-                </Link>
+            <!-- Book grid -->
+            <div v-if="books.data.length" class="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+                <BookCard v-for="book in books.data" :key="book.id" :book="book" />
+            </div>
+            <div v-else class="card mt-10 py-16 text-center">
+                <p class="h text-2xl">Tidak ada buku yang cocok.</p>
+                <p class="lt mt-2 text-muted">Coba ubah kata kunci atau kosongkan filter.</p>
             </div>
 
             <!-- Pagination -->
-            <div v-if="books.last_page > 1" class="mt-8 flex justify-center gap-2">
-                <Link v-for="p in books.last_page" :key="p" :href="route('catalog.index', { page: p })"
-                    :class="['px-3 py-1 rounded', p === books.current_page ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100']">
+            <nav
+                v-if="books.last_page > 1"
+                class="mt-12 flex flex-wrap justify-center gap-2"
+                aria-label="Navigasi halaman"
+            >
+                <Link
+                    v-for="p in books.last_page"
+                    :key="p"
+                    :href="route('catalog.index', { ...query, page: p })"
+                    class="lk grid h-10 w-10 place-items-center rounded-full text-sm transition-colors"
+                    :class="p === books.current_page ? 'bg-ink text-white' : 'bg-soft text-muted hover:bg-field hover:text-ink'"
+                >
                     {{ p }}
                 </Link>
-            </div>
+            </nav>
         </main>
+
+        <AppFooter />
     </div>
 </template>

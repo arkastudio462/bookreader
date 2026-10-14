@@ -20,14 +20,14 @@ function remove(bookId) {
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="text-xl font-semibold leading-tight text-gray-800">Keranjang Belanja</h2>
+            <h2 class="h text-xl text-ink">Keranjang Belanja</h2>
         </template>
 
         <div class="py-8">
             <div class="mx-auto max-w-4xl sm:px-6 lg:px-8">
-                <div v-if="!items.length" class="rounded-lg bg-white p-12 text-center shadow">
-                    <p class="text-gray-600">Keranjang Anda masih kosong.</p>
-                    <Link :href="route('catalog.index')" class="mt-4 inline-block text-blue-600 hover:underline">
+                <div v-if="!items.length" class="card p-12 text-center">
+                    <p class="text-muted">Keranjang Anda masih kosong.</p>
+                    <Link :href="route('catalog.index')" class="lk mt-4 inline-block text-ink hover:underline">
                         Jelajahi katalog
                     </Link>
                 </div>
@@ -36,33 +36,40 @@ function remove(bookId) {
                     <div
                         v-for="item in items"
                         :key="item.id"
-                        class="flex items-center gap-4 rounded-lg bg-white p-4 shadow"
+                        class="card flex items-center gap-4"
                     >
-                        <div class="h-20 w-14 shrink-0 rounded bg-gray-200"></div>
+                        <div class="h-20 w-14 shrink-0 overflow-hidden rounded-sm bg-soft">
+                            <img
+                                v-if="item.book.cover_url"
+                                :src="item.book.cover_url"
+                                :alt="item.book.title"
+                                class="h-full w-full object-cover"
+                            />
+                        </div>
                         <div class="min-w-0 flex-1">
                             <Link
                                 :href="route('catalog.show', item.book.slug)"
-                                class="font-medium text-gray-900 hover:text-blue-600"
+                                class="lk truncate text-ink hover:underline"
                             >
                                 {{ item.book.title }}
                             </Link>
-                            <p class="truncate text-sm text-gray-600">{{ item.book.author_name }}</p>
+                            <p class="truncate text-sm text-muted">{{ item.book.author_name }}</p>
                         </div>
-                        <div class="font-semibold text-blue-600">{{ rupiah(item.book.effective_price) }}</div>
-                        <button @click="remove(item.book_id)" class="text-sm text-red-600 hover:underline">
+                        <div class="lk text-ink">{{ rupiah(item.book.effective_price) }}</div>
+                        <button @click="remove(item.book_id)" class="text-sm text-muted hover:text-ink hover:underline">
                             Hapus
                         </button>
                     </div>
 
-                    <div class="rounded-lg bg-white p-6 shadow">
-                        <div class="flex items-center justify-between text-lg font-semibold text-gray-900">
-                            <span>Subtotal</span>
-                            <span>{{ rupiah(subtotal) }}</span>
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <span class="lk text-lg text-ink">Subtotal</span>
+                            <span class="lk text-lg text-ink">{{ rupiah(subtotal) }}</span>
                         </div>
-                        <p class="mt-1 text-sm text-gray-600">Poin tersedia: {{ points_balance }}</p>
+                        <p class="mt-1 text-sm text-muted">Poin tersedia: {{ points_balance }}</p>
                         <Link
                             :href="route('checkout.index')"
-                            class="mt-4 block rounded-lg bg-blue-600 py-3 text-center font-semibold text-white hover:bg-blue-700"
+                            class="btn-primary mt-4 block text-center"
                         >
                             Lanjut ke Checkout
                         </Link>

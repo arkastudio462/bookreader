@@ -12,7 +12,7 @@ defineProps({
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="text-xl font-semibold leading-tight text-gray-800">
+            <h2 class="h text-xl text-ink">
                 Dashboard Penulis
             </h2>
         </template>
@@ -20,31 +20,31 @@ defineProps({
         <div class="py-12">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
-                    <div class="overflow-hidden bg-white p-6 shadow-sm sm:rounded-lg">
-                        <p class="text-sm text-gray-500">Total Karya</p>
-                        <p class="mt-2 text-3xl font-bold text-gray-900">
+                    <div class="card">
+                        <p class="lk text-sm text-muted">Total Karya</p>
+                        <p class="h mt-2 text-3xl text-ink">
                             {{ stats.total_books ?? 0 }}
                         </p>
                     </div>
-                    <div class="overflow-hidden bg-white p-6 shadow-sm sm:rounded-lg">
-                        <p class="text-sm text-gray-500">Terbit</p>
-                        <p class="mt-2 text-3xl font-bold text-emerald-600">
+                    <div class="card">
+                        <p class="lk text-sm text-muted">Terbit</p>
+                        <p class="h mt-2 text-3xl text-ink">
                             {{ stats.published_books ?? 0 }}
                         </p>
                     </div>
-                    <div class="overflow-hidden bg-white p-6 shadow-sm sm:rounded-lg">
-                        <p class="text-sm text-gray-500">Menunggu Moderasi</p>
-                        <p class="mt-2 text-3xl font-bold text-amber-600">
+                    <div class="card">
+                        <p class="lk text-sm text-muted">Menunggu Moderasi</p>
+                        <p class="h mt-2 text-3xl text-ink">
                             {{ stats.pending_books ?? 0 }}
                         </p>
                     </div>
                 </div>
 
                 <div class="mt-6">
-                    <Link :href="route('author.books.index')" class="inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+                    <Link :href="route('author.books.index')" class="btn-primary">
                         Kelola Buku Saya
                     </Link>
-                    <Link :href="route('author.books.create')" class="ml-3 inline-flex items-center rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50">
+                    <Link :href="route('author.books.create')" class="btn-outline ml-3">
                         Unggah Buku Baru
                     </Link>
                 </div>

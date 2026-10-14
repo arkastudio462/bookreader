@@ -17,9 +17,9 @@ const axios = window.axios;
 /* ---------------- Preferences ---------------- */
 const prefs = reactive({ ...props.preferences });
 const themeClasses = {
-    light: 'bg-white text-gray-900',
+    light: 'bg-canvas text-ink',
     sepia: 'bg-[#f4ecd8] text-[#3b2f2f]',
-    dark: 'bg-gray-900 text-gray-100',
+    dark: 'bg-ink text-soft',
 };
 
 let prefTimer = null;
@@ -319,8 +319,8 @@ onBeforeUnmount(() => {
         <!-- Toolbar -->
         <header class="flex items-center justify-between border-b border-black/10 px-4 py-2 text-sm">
             <div class="flex items-center gap-3">
-                <Link :href="route('catalog.show', book.slug)" class="hover:opacity-70">← Kembali</Link>
-                <span class="font-semibold">{{ book.title }}</span>
+                <Link :href="route('catalog.show', book.slug)" class="lk hover:opacity-70">← Kembali</Link>
+                <span class="lk">{{ book.title }}</span>
                 <span class="hidden sm:inline opacity-60">· {{ book.author_name }}</span>
             </div>
 
@@ -336,28 +336,28 @@ onBeforeUnmount(() => {
         </header>
 
         <!-- Sample banner -->
-        <div v-if="isSample" class="bg-amber-100 px-4 py-2 text-center text-sm text-amber-900">
+        <div v-if="isSample" class="bg-soft px-4 py-2 text-center text-sm text-ink">
             Anda membaca <strong>pratinjau sampel</strong>.
-            <Link :href="route('catalog.show', book.slug)" class="font-semibold underline">Beli buku untuk membaca penuh</Link>
+            <Link :href="route('catalog.show', book.slug)" class="lk underline">Beli buku untuk membaca penuh</Link>
         </div>
 
         <!-- Progress bar -->
         <div class="h-1 w-full bg-black/10">
-            <div class="h-1 bg-blue-600 transition-all" :style="{ width: percent + '%' }"></div>
+            <div class="h-1 bg-ink transition-all" :style="{ width: percent + '%' }"></div>
         </div>
 
         <!-- Content -->
         <main class="relative flex-1 overflow-hidden">
             <div v-if="loading" class="flex h-full items-center justify-center opacity-60">Memuat buku…</div>
-            <div v-else-if="errorMsg" class="flex h-full items-center justify-center p-8 text-center text-red-600">{{ errorMsg }}</div>
+            <div v-else-if="errorMsg" class="flex h-full items-center justify-center p-8 text-center text-ink">{{ errorMsg }}</div>
 
             <!-- EPUB viewer -->
             <div v-show="!loading && !errorMsg && book.type === 'epub'" ref="viewer" class="h-full w-full"></div>
 
             <!-- PDF viewer -->
             <div v-show="!loading && !errorMsg && book.type === 'pdf'" class="flex h-full flex-col items-center overflow-auto bg-black/5 p-4">
-                <canvas ref="canvas" class="max-w-full shadow"></canvas>
-                <div class="sticky bottom-0 mt-4 flex items-center gap-4 rounded-full bg-white/90 px-4 py-2 shadow">
+                <canvas ref="canvas" class="max-w-full"></canvas>
+                <div class="sticky bottom-0 mt-4 flex items-center gap-4 rounded-full bg-canvas/90 px-4 py-2">
                     <button @click="pdfPrev" :disabled="pdfPage <= 1" class="rounded px-3 py-1 disabled:opacity-30">‹</button>
                     <span class="text-sm">Hal. {{ pdfPage }} / {{ pdfTotal }}</span>
                     <button @click="pdfNext" class="rounded px-3 py-1">›</button>
@@ -371,19 +371,19 @@ onBeforeUnmount(() => {
             </div>
 
             <!-- Settings panel -->
-            <div v-if="showSettings" class="absolute right-4 top-4 w-72 rounded-lg bg-white p-4 text-gray-900 shadow-xl">
-                <h3 class="mb-3 font-semibold">Pengaturan Baca</h3>
+            <div v-if="showSettings" class="absolute right-4 top-4 w-72 rounded-md border border-hairline-soft bg-canvas p-4 text-ink">
+                <h3 class="h mb-3">Pengaturan Baca</h3>
                 <label class="mb-1 block text-xs">Tema</label>
                 <div class="mb-3 flex gap-2">
                     <button v-for="t in ['light','sepia','dark']" :key="t" @click="prefs.theme = t"
-                        :class="['flex-1 rounded border px-2 py-1 text-xs capitalize', prefs.theme === t ? 'border-blue-600 bg-blue-50' : 'border-gray-300']">{{ t }}</button>
+                        :class="['flex-1 rounded border px-2 py-1 text-xs capitalize', prefs.theme === t ? 'seg-on border-transparent' : 'seg-off border-hair']">{{ t }}</button>
                 </div>
                 <label class="mb-1 block text-xs">Ukuran huruf: {{ prefs.font_size }}px</label>
                 <input v-model.number="prefs.font_size" type="range" min="12" max="28" class="mb-3 w-full">
                 <label class="mb-1 block text-xs">Jenis huruf</label>
                 <div class="mb-3 flex gap-2">
                     <button v-for="f in ['serif','sans-serif']" :key="f" @click="prefs.font_family = f"
-                        :class="['flex-1 rounded border px-2 py-1 text-xs', prefs.font_family === f ? 'border-blue-600 bg-blue-50' : 'border-gray-300']">{{ f }}</button>
+                        :class="['flex-1 rounded border px-2 py-1 text-xs', prefs.font_family === f ? 'seg-on border-transparent' : 'seg-off border-hair']">{{ f }}</button>
                 </div>
                 <label class="mb-1 block text-xs">Warna highlight</label>
                 <div class="flex gap-2">
@@ -397,76 +397,76 @@ onBeforeUnmount(() => {
                     <label class="mb-1 block text-xs">Lebar halaman</label>
                     <div class="flex gap-2">
                         <button v-for="m in ['narrow','normal','wide']" :key="m" @click="prefs.margin = m"
-                            :class="['flex-1 rounded border px-2 py-1 text-xs capitalize', prefs.margin === m ? 'border-blue-600 bg-blue-50' : 'border-gray-300']">{{ m }}</button>
+                            :class="['flex-1 rounded border px-2 py-1 text-xs capitalize', prefs.margin === m ? 'seg-on border-transparent' : 'seg-off border-hair']">{{ m }}</button>
                     </div>
                 </template>
             </div>
 
             <!-- Search panel (EPUB) -->
-            <div v-if="showSearch" class="absolute right-4 top-16 w-80 rounded-lg bg-white p-4 text-gray-900 shadow-xl">
+            <div v-if="showSearch" class="absolute right-4 top-16 w-80 rounded-md border border-hairline-soft bg-canvas p-4 text-ink">
                 <div class="mb-3 flex items-center justify-between">
-                    <h3 class="font-semibold">Cari dalam buku</h3>
-                    <button @click="showSearch = false" class="text-gray-500">✕</button>
+                    <h3 class="h">Cari dalam buku</h3>
+                    <button @click="showSearch = false" class="lk text-muted">✕</button>
                 </div>
                 <form @submit.prevent="runSearch" class="mb-3 flex gap-2">
                     <input v-model="searchQuery" type="text" placeholder="Kata kunci…"
-                        class="flex-1 rounded border border-gray-300 px-2 py-1 text-sm">
-                    <button type="submit" class="rounded bg-blue-600 px-3 py-1 text-sm text-white">Cari</button>
+                        class="field flex-1">
+                    <button type="submit" class="rounded-full bg-ink px-3 py-1 text-sm text-white">Cari</button>
                 </form>
-                <p v-if="searching" class="text-sm text-gray-500">Mencari…</p>
-                <p v-else-if="searchQuery && !searchResults.length" class="text-sm text-gray-500">Tidak ada hasil.</p>
+                <p v-if="searching" class="text-sm text-muted">Mencari…</p>
+                <p v-else-if="searchQuery && !searchResults.length" class="text-sm text-muted">Tidak ada hasil.</p>
                 <ul class="max-h-64 space-y-2 overflow-auto text-sm">
                     <li v-for="(r, i) in searchResults" :key="i">
-                        <button @click="goToResult(r.cfi)" class="w-full rounded border border-gray-200 p-2 text-left hover:bg-gray-50"
+                        <button @click="goToResult(r.cfi)" class="w-full rounded-sm border border-hair p-2 text-left hover:bg-soft"
                             v-html="r.excerpt"></button>
                     </li>
                 </ul>
             </div>
 
             <!-- TOC panel -->
-            <div v-if="showToc" class="absolute left-0 top-0 h-full w-80 overflow-auto bg-white p-4 text-gray-900 shadow-xl">
+            <div v-if="showToc" class="absolute left-0 top-0 h-full w-80 overflow-auto border-r border-hairline-soft bg-canvas p-4 text-ink">
                 <div class="mb-3 flex items-center justify-between">
-                    <h3 class="font-semibold">Daftar Isi</h3>
-                    <button @click="showToc = false" class="text-gray-500">✕</button>
+                    <h3 class="h">Daftar Isi</h3>
+                    <button @click="showToc = false" class="lk text-muted">✕</button>
                 </div>
                 <ul class="space-y-1 text-sm">
                     <li v-for="(item, i) in toc" :key="i">
-                        <button @click="goTo(item.href); showToc = false" class="w-full rounded px-2 py-1 text-left hover:bg-gray-100">{{ item.label }}</button>
+                        <button @click="goTo(item.href); showToc = false" class="w-full rounded-sm px-2 py-1 text-left hover:bg-soft">{{ item.label }}</button>
                     </li>
                 </ul>
             </div>
 
             <!-- Bookmarks panel -->
-            <div v-if="showBookmarks" class="absolute right-0 top-0 h-full w-80 overflow-auto bg-white p-4 text-gray-900 shadow-xl">
+            <div v-if="showBookmarks" class="absolute right-0 top-0 h-full w-80 overflow-auto border-l border-hairline-soft bg-canvas p-4 text-ink">
                 <div class="mb-3 flex items-center justify-between">
-                    <h3 class="font-semibold">Bookmark</h3>
-                    <button @click="showBookmarks = false" class="text-gray-500">✕</button>
+                    <h3 class="h">Bookmark</h3>
+                    <button @click="showBookmarks = false" class="lk text-muted">✕</button>
                 </div>
-                <p v-if="!bookmarkList.length" class="text-sm text-gray-500">Belum ada bookmark.</p>
+                <p v-if="!bookmarkList.length" class="text-sm text-muted">Belum ada bookmark.</p>
                 <ul class="space-y-2 text-sm">
-                    <li v-for="b in bookmarkList" :key="b.id" class="flex items-center justify-between rounded border border-gray-200 p-2">
+                    <li v-for="b in bookmarkList" :key="b.id" class="flex items-center justify-between rounded-sm border border-hair p-2">
                         <button @click="goToBookmark(b)" class="text-left">{{ b.label || 'Tanpa label' }}</button>
-                        <button @click="removeBookmark(b.id)" class="text-red-500">Hapus</button>
+                        <button @click="removeBookmark(b.id)" class="lk text-muted">Hapus</button>
                     </li>
                 </ul>
 
-                <h3 class="mb-3 mt-6 font-semibold">Highlight ({{ highlightList.length }})</h3>
+                <h3 class="h mb-3 mt-6">Highlight ({{ highlightList.length }})</h3>
                 <ul class="space-y-2 text-sm">
-                    <li v-for="h in highlightList" :key="h.id" class="rounded border border-gray-200 p-2">
+                    <li v-for="h in highlightList" :key="h.id" class="rounded-sm border border-hair p-2">
                         <div class="flex items-start justify-between">
                             <button @click="goTo(h.location); showBookmarks = false" class="text-left" :style="{ borderLeft: '4px solid ' + colorHex(h.color), paddingLeft: '6px' }">{{ h.text }}</button>
-                            <button @click="removeHighlight(h)" class="ml-2 text-red-500">Hapus</button>
+                            <button @click="removeHighlight(h)" class="lk ml-2 text-muted">Hapus</button>
                         </div>
                     </li>
                 </ul>
             </div>
 
             <!-- Highlight prompt -->
-            <div v-if="showHighlightPrompt" class="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-lg bg-gray-900 px-4 py-3 text-white shadow-xl">
+            <div v-if="showHighlightPrompt" class="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-md bg-ink px-4 py-3 text-white">
                 <p class="mb-2 max-w-sm truncate text-sm">"{{ pendingHighlight?.text }}"</p>
                 <div class="flex gap-2">
-                    <button @click="confirmHighlight" class="rounded bg-blue-600 px-3 py-1 text-sm">Highlight</button>
-                    <button @click="cancelHighlight" class="rounded bg-gray-700 px-3 py-1 text-sm">Batal</button>
+                    <button @click="confirmHighlight" class="rounded-full bg-canvas px-3 py-1 text-sm text-ink">Highlight</button>
+                    <button @click="cancelHighlight" class="rounded-full bg-ink-soft px-3 py-1 text-sm text-white">Batal</button>
                 </div>
             </div>
         </main>

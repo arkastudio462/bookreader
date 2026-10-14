@@ -55,58 +55,58 @@ function refreshToken() {
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="text-xl font-semibold leading-tight text-gray-800">Detail Pesanan #{{ order.id }}</h2>
+            <h2 class="h text-xl">Detail Pesanan #{{ order.id }}</h2>
         </template>
 
         <div class="py-8">
             <div class="mx-auto max-w-3xl space-y-6 sm:px-6 lg:px-8">
-                <div v-if="flashError" class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                <div v-if="flashError" class="card border-hair px-4 py-3 text-sm text-ink">
                     {{ flashError }}
                 </div>
-                <div v-if="flashSuccess" class="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+                <div v-if="flashSuccess" class="card border-hair px-4 py-3 text-sm text-ink">
                     {{ flashSuccess }}
                 </div>
 
-                <div class="rounded-lg bg-white p-6 shadow">
+                <div class="card p-6">
                     <div class="flex items-center justify-between">
-                        <span class="text-gray-600">Status</span>
-                        <span class="font-semibold text-gray-900">{{ labels[order.status] || order.status }}</span>
+                        <span class="text-muted">Status</span>
+                        <span class="lk text-ink">{{ labels[order.status] || order.status }}</span>
                     </div>
                     <div class="mt-2 flex items-center justify-between">
-                        <span class="text-gray-600">ID Midtrans</span>
-                        <span class="font-mono text-sm text-gray-900">{{ order.midtrans_order_id }}</span>
+                        <span class="text-muted">ID Midtrans</span>
+                        <span class="font-mono text-sm text-ink">{{ order.midtrans_order_id }}</span>
                     </div>
                     <div v-if="order.paid_at" class="mt-2 flex items-center justify-between">
-                        <span class="text-gray-600">Dibayar pada</span>
-                        <span class="text-gray-900">{{ order.paid_at }}</span>
+                        <span class="text-muted">Dibayar pada</span>
+                        <span class="text-ink">{{ order.paid_at }}</span>
                     </div>
                 </div>
 
-                <div class="rounded-lg bg-white p-6 shadow">
-                    <h3 class="mb-4 font-semibold text-gray-900">Item</h3>
-                    <div v-for="item in order.items" :key="item.id" class="flex items-center justify-between border-b border-gray-100 py-2 last:border-0">
+                <div class="card p-6">
+                    <h3 class="lk mb-4 text-ink">Item</h3>
+                    <div v-for="item in order.items" :key="item.id" class="flex items-center justify-between border-b border-hairline-soft py-2 last:border-0">
                         <div>
-                            <p class="font-medium text-gray-900">{{ item.book?.title || ('Buku #' + item.book_id) }}</p>
-                            <p class="text-xs text-gray-500">Harga dasar {{ rupiah(item.price) }}</p>
+                            <p class="lk text-ink">{{ item.book?.title || ('Buku #' + item.book_id) }}</p>
+                            <p class="lt text-xs text-muted">Harga dasar {{ rupiah(item.price) }}</p>
                         </div>
-                        <span class="text-gray-900">{{ rupiah(item.price) }}</span>
+                        <span class="text-ink">{{ rupiah(item.price) }}</span>
                     </div>
                 </div>
 
-                <div class="rounded-lg bg-white p-6 shadow">
-                    <div class="flex justify-between py-1 text-gray-700">
+                <div class="card p-6">
+                    <div class="flex justify-between py-1 text-muted">
                         <span>Subtotal</span>
                         <span>{{ rupiah(order.subtotal) }}</span>
                     </div>
-                    <div v-if="Number(order.voucher_discount) > 0" class="flex justify-between py-1 text-green-700">
+                    <div v-if="Number(order.voucher_discount) > 0" class="flex justify-between py-1 text-muted">
                         <span>Voucher</span>
                         <span>−{{ rupiah(order.voucher_discount) }}</span>
                     </div>
-                    <div v-if="Number(order.point_discount) > 0" class="flex justify-between py-1 text-green-700">
+                    <div v-if="Number(order.point_discount) > 0" class="flex justify-between py-1 text-muted">
                         <span>Poin ({{ order.points_used }} poin)</span>
                         <span>−{{ rupiah(order.point_discount) }}</span>
                     </div>
-                    <div class="mt-3 flex justify-between border-t border-gray-200 pt-3 text-lg font-bold text-gray-900">
+                    <div class="lk mt-3 flex justify-between border-t border-hair pt-3 text-lg text-ink">
                         <span>Total</span>
                         <span>{{ rupiah(order.total) }}</span>
                     </div>
@@ -115,14 +115,14 @@ function refreshToken() {
                         <button
                             v-if="order.snap_token"
                             @click="payNow"
-                            class="mt-4 w-full rounded-lg bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700"
+                            class="btn-primary mt-4 w-full py-3"
                         >
                             Bayar Sekarang
                         </button>
                         <button
                             v-else
                             @click="refreshToken"
-                            class="mt-4 w-full rounded-lg bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700"
+                            class="btn-primary mt-4 w-full py-3"
                         >
                             Muat Halaman Pembayaran
                         </button>
@@ -131,13 +131,13 @@ function refreshToken() {
                     <Link
                         v-if="order.status === 'paid'"
                         :href="route('library.index')"
-                        class="mt-4 block rounded-lg bg-green-600 py-3 text-center font-semibold text-white hover:bg-green-700"
+                        class="btn-primary mt-4 block py-3 text-center"
                     >
                         Buka Pustaka Saya
                     </Link>
                 </div>
 
-                <Link :href="route('orders.index')" class="block text-center text-sm text-blue-600 hover:underline">
+                <Link :href="route('orders.index')" class="lk block text-center text-sm text-ink hover:underline">
                     ← Kembali ke daftar pesanan
                 </Link>
             </div>

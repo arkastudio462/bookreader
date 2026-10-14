@@ -29,56 +29,56 @@ function destroy() {
     <AuthenticatedLayout>
         <template #header>
             <div class="flex items-center justify-between">
-                <h2 class="text-xl font-semibold leading-tight text-gray-800">Detail Buku</h2>
-                <Link :href="route('author.books.index')" class="text-sm text-blue-600 hover:underline">← Kembali</Link>
+                <h2 class="h text-xl text-ink">Detail Buku</h2>
+                <Link :href="route('author.books.index')" class="lk text-sm text-ink hover:text-ink-soft">← Kembali</Link>
             </div>
         </template>
 
         <div class="py-12">
             <div class="mx-auto max-w-4xl sm:px-6 lg:px-8">
-                <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+                <div class="overflow-hidden rounded-md border border-hairline-soft bg-canvas">
                     <div class="p-6">
                         <div class="flex items-start justify-between">
                             <div>
-                                <h3 class="text-2xl font-bold text-gray-900">{{ book.title }}</h3>
-                                <p class="mt-1 text-gray-600">oleh {{ book.author_name }}</p>
+                                <h3 class="h text-2xl text-ink">{{ book.title }}</h3>
+                                <p class="lt mt-1 text-muted">oleh {{ book.author_name }}</p>
                             </div>
-                            <span class="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold">{{ statusLabels[book.status] || book.status }}</span>
+                            <span class="lk rounded-full bg-soft px-3 py-1 text-sm text-ink">{{ statusLabels[book.status] || book.status }}</span>
                         </div>
 
                         <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Harga</dt>
-                                <dd class="mt-1 text-gray-900">Rp {{ Number(book.price).toLocaleString('id-ID') }}</dd>
+                                <dt class="lk text-sm text-muted">Harga</dt>
+                                <dd class="mt-1 text-ink">Rp {{ Number(book.price).toLocaleString('id-ID') }}</dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Kategori</dt>
-                                <dd class="mt-1 text-gray-900">{{ book.category?.name || '-' }}</dd>
+                                <dt class="lk text-sm text-muted">Kategori</dt>
+                                <dd class="mt-1 text-ink">{{ book.category?.name || '-' }}</dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">ISBN</dt>
-                                <dd class="mt-1 text-gray-900">{{ book.isbn || '-' }}</dd>
+                                <dt class="lk text-sm text-muted">ISBN</dt>
+                                <dd class="mt-1 text-ink">{{ book.isbn || '-' }}</dd>
                             </div>
                             <div>
-                                <dt class="text-sm font-medium text-gray-500">Bahasa</dt>
-                                <dd class="mt-1 text-gray-900">{{ book.language === 'id' ? 'Indonesia' : 'English' }}</dd>
+                                <dt class="lk text-sm text-muted">Bahasa</dt>
+                                <dd class="mt-1 text-ink">{{ book.language === 'id' ? 'Indonesia' : 'English' }}</dd>
                             </div>
                         </dl>
 
                         <div class="mt-6">
-                            <dt class="text-sm font-medium text-gray-500">Deskripsi</dt>
-                            <dd class="mt-1 whitespace-pre-line text-gray-700">{{ book.description }}</dd>
+                            <dt class="lk text-sm text-muted">Deskripsi</dt>
+                            <dd class="mt-1 whitespace-pre-line text-ink-soft">{{ book.description }}</dd>
                         </div>
 
-                        <div v-if="book.status === 'rejected'" class="mt-6 rounded-md bg-red-50 p-4 text-sm text-red-800">
+                        <div v-if="book.status === 'rejected'" class="mt-6 rounded-md bg-soft p-4 text-sm text-ink">
                             Buku ditolak moderasi. Silakan perbaiki lalu ajukan ulang.
                         </div>
 
                         <div class="mt-8 flex gap-4">
-                            <Link v-if="canEdit" :href="route('author.books.edit', book.id)" class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+                            <Link v-if="canEdit" :href="route('author.books.edit', book.id)" class="btn-primary">
                                 Edit Buku
                             </Link>
-                            <button v-if="canDelete" @click="destroy" class="rounded-md border border-red-300 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50">
+                            <button v-if="canDelete" @click="destroy" class="btn-outline">
                                 Hapus
                             </button>
                         </div>

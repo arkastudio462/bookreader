@@ -12,8 +12,24 @@ export default {
 
     theme: {
         extend: {
+            colors: {
+                ink: '#141414',
+                'ink-soft': '#262626',
+                canvas: '#ffffff',
+                soft: '#f3f3f3',
+                field: '#f0f0f0',
+                'hairline-soft': '#f0f0f0',
+                hair: '#e0e0e0',
+                muted: '#707070',
+                faint: '#adadad',
+                accent: '#0066ff',
+            },
+            borderRadius: {
+                sm: '16px',
+                md: '24px',
+            },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
         },
     },

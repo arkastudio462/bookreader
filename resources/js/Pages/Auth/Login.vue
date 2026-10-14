@@ -31,13 +31,21 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <Head title="Log in" />
+        <Head title="Masuk" />
 
-        <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
+        <h1 class="h text-3xl text-ink">Masuk ke akunmu.</h1>
+        <p class="lt mt-2 text-sm text-muted">
+            Lanjutkan membaca, kelola pesanan, dan simpan progres bacamu.
+        </p>
+
+        <div
+            v-if="status"
+            class="lk mt-4 rounded-sm bg-canvas px-4 py-3 text-sm text-ink"
+        >
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit">
+        <form class="mt-6 space-y-4" @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
 
@@ -54,8 +62,8 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+            <div>
+                <InputLabel for="password" value="Kata sandi" />
 
                 <TextInput
                     id="password"
@@ -69,32 +77,38 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
-            <div class="mt-4 block">
-                <label class="flex items-center">
+            <div class="flex items-center justify-between gap-3">
+                <label class="flex items-center gap-2">
                     <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ms-2 text-sm text-gray-600"
-                        >Remember me</span
-                    >
+                    <span class="text-sm text-muted">Ingat saya</span>
                 </label>
-            </div>
 
-            <div class="mt-4 flex items-center justify-end">
                 <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    class="lk text-sm text-muted underline hover:text-ink"
                 >
-                    Forgot your password?
+                    Lupa kata sandi?
                 </Link>
-
-                <PrimaryButton
-                    class="ms-4"
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Log in
-                </PrimaryButton>
             </div>
+
+            <PrimaryButton
+                class="w-full"
+                :class="{ 'opacity-50': form.processing }"
+                :disabled="form.processing"
+            >
+                Masuk
+            </PrimaryButton>
         </form>
+
+        <p class="mt-6 text-center text-sm text-muted">
+            Belum punya akun?
+            <Link
+                :href="route('register')"
+                class="lk text-ink underline hover:text-ink-soft"
+            >
+                Daftar gratis
+            </Link>
+        </p>
     </GuestLayout>
 </template>

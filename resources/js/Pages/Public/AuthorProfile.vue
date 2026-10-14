@@ -1,5 +1,8 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
+import AppHeader from '@/Components/AppHeader.vue';
+import AppFooter from '@/Components/AppFooter.vue';
+import BookCard from '@/Components/BookCard.vue';
 
 defineProps({
     author: Object,
@@ -8,41 +11,36 @@ defineProps({
 </script>
 
 <template>
-    <Head :title="author.name + ' - Penulis'" />
+    <Head :title="author.name + ' — penulis'" />
 
-    <div class="min-h-screen bg-gray-50">
-        <header class="bg-white shadow-sm">
-            <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between">
-                    <Link :href="route('landing')" class="text-2xl font-bold text-gray-900">PerpusKita</Link>
-                    <Link :href="route('catalog.index')" class="text-gray-700 hover:text-gray-900">Katalog</Link>
-                </div>
-            </div>
-        </header>
+    <div class="flex min-h-screen flex-col bg-canvas">
+        <AppHeader />
 
-        <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-            <div class="rounded-lg bg-white p-8 shadow">
-                <h1 class="text-3xl font-bold text-gray-900">{{ author.name }}</h1>
-                <p class="mt-1 text-gray-600">Penulis</p>
-                <p v-if="author.bio" class="mt-4 text-gray-700 leading-relaxed">{{ author.bio }}</p>
-                <a v-if="author.website" :href="author.website" target="_blank" class="mt-2 inline-block text-blue-600 hover:underline">{{ author.website }}</a>
+        <main class="mx-auto w-full max-w-6xl flex-1 px-5 pt-16">
+            <div class="card-soft">
+                <span class="badge-overlay">Penulis</span>
+                <h1 class="h mt-4 text-4xl md:text-[56px]">{{ author.name }}</h1>
+                <p v-if="author.bio" class="lt mt-4 max-w-2xl text-xl leading-snug text-muted">
+                    {{ author.bio }}
+                </p>
+                <a
+                    v-if="author.website"
+                    :href="author.website"
+                    target="_blank"
+                    rel="noopener"
+                    class="lk mt-4 inline-block text-ink hover:underline"
+                >
+                    {{ author.website }}
+                </a>
             </div>
 
-            <h2 class="mt-10 text-2xl font-bold text-gray-900">Karya ({{ books.length }})</h2>
-            <div v-if="books.length" class="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-                <Link v-for="book in books" :key="book.id" :href="route('catalog.show', book.slug)" class="group">
-                    <div class="aspect-[2/3] overflow-hidden rounded-lg bg-gray-200">
-                        <img v-if="book.cover_path" :src="book.cover_path" :alt="book.title" class="h-full w-full object-cover">
-                        <div v-else class="flex h-full items-center justify-center text-gray-400">Cover</div>
-                    </div>
-                    <h3 class="mt-2 font-medium text-gray-900 group-hover:text-blue-600">{{ book.title }}</h3>
-                    <div class="mt-1 flex items-center gap-2">
-                        <span class="text-sm text-yellow-500">★ {{ book.average_rating }}</span>
-                        <span class="font-semibold text-blue-600">Rp {{ Number(book.price).toLocaleString('id-ID') }}</span>
-                    </div>
-                </Link>
+            <h2 class="h mt-24 text-3xl">Karya ({{ books.length }}).</h2>
+            <div v-if="books.length" class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+                <BookCard v-for="book in books" :key="book.id" :book="book" />
             </div>
-            <p v-else class="mt-6 text-gray-500">Belum ada buku terbit.</p>
+            <p v-else class="lt mt-6 text-muted">Belum ada buku terbit.</p>
         </main>
+
+        <AppFooter />
     </div>
 </template>

@@ -57,55 +57,55 @@ function clearDiscount() {
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="text-xl font-semibold leading-tight text-gray-800">Edit Buku</h2>
+            <h2 class="h text-xl text-ink">Edit Buku</h2>
         </template>
 
         <div class="py-12">
             <div class="mx-auto max-w-4xl space-y-6 sm:px-6 lg:px-8">
                 <form @submit.prevent="submit" class="space-y-6">
-                    <div class="space-y-4 rounded-lg bg-white p-6 shadow">
+                    <div class="space-y-4 card">
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Judul *</label>
-                                <input v-model="form.title" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                                <span v-if="form.errors.title" class="mt-1 text-xs text-red-600">{{ form.errors.title }}</span>
+                                <label class="lk block text-sm text-ink-soft">Judul *</label>
+                                <input v-model="form.title" type="text" class="field mt-1 block w-full">
+                                <span v-if="form.errors.title" class="mt-1 text-xs text-ink">{{ form.errors.title }}</span>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">ISBN</label>
-                                <input v-model="form.isbn" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <label class="lk block text-sm text-ink-soft">ISBN</label>
+                                <input v-model="form.isbn" type="text" class="field mt-1 block w-full">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Nama Penulis *</label>
-                                <input v-model="form.author_name" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <label class="lk block text-sm text-ink-soft">Nama Penulis *</label>
+                                <input v-model="form.author_name" type="text" class="field mt-1 block w-full">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Kategori *</label>
-                                <select v-model="form.category_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <label class="lk block text-sm text-ink-soft">Kategori *</label>
+                                <select v-model="form.category_id" class="field mt-1 block w-full">
                                     <option v-for="cat in categories" :key="cat.id" :value="cat.id">{{ cat.name }}</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Bahasa *</label>
-                                <select v-model="form.language" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <label class="lk block text-sm text-ink-soft">Bahasa *</label>
+                                <select v-model="form.language" class="field mt-1 block w-full">
                                     <option value="id">Indonesia</option>
                                     <option value="en">English</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Harga Jual (Rp) *</label>
-                                <input v-model.number="form.price" type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <label class="lk block text-sm text-ink-soft">Harga Jual (Rp) *</label>
+                                <input v-model.number="form.price" type="number" class="field mt-1 block w-full">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Deskripsi *</label>
-                            <textarea v-model="form.description" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                            <label class="lk block text-sm text-ink-soft">Deskripsi *</label>
+                            <textarea v-model="form.description" rows="4" class="field mt-1 block w-full"></textarea>
                         </div>
                     </div>
 
-                    <div class="rounded-lg bg-white p-6 shadow">
+                    <div class="card">
                         <div class="flex justify-end gap-4">
-                            <Link :href="route('author.books.show', book.id)" class="rounded-md border border-gray-300 px-4 py-2 text-sm hover:bg-gray-50">Batal</Link>
-                            <button type="submit" :disabled="form.processing" class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50">
+                            <Link :href="route('author.books.show', book.id)" class="btn-outline">Batal</Link>
+                            <button type="submit" :disabled="form.processing" class="btn-primary disabled:opacity-50">
                                 Simpan Perubahan
                             </button>
                         </div>
@@ -113,10 +113,10 @@ function clearDiscount() {
                 </form>
 
                 <!-- Diskon terjadwal per buku (FR-4.4.4 / FR-4.7.1) -->
-                <form @submit.prevent="submitDiscount" class="space-y-4 rounded-lg bg-white p-6 shadow">
+                <form @submit.prevent="submitDiscount" class="space-y-4 card">
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-900">Diskon Terjadwal</h3>
-                        <p class="mt-1 text-sm text-gray-600">
+                        <h3 class="h text-lg text-ink">Diskon Terjadwal</h3>
+                        <p class="lt mt-1 text-sm text-muted">
                             Harga coret otomatis tampil saat jadwal aktif dan kembali normal setelah berakhir.
                             Harga jual saat ini: <strong>Rp {{ Number(book.price).toLocaleString('id-ID') }}</strong>.
                         </p>
@@ -124,32 +124,32 @@ function clearDiscount() {
 
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Harga Diskon (Rp)</label>
+                            <label class="lk block text-sm text-ink-soft">Harga Diskon (Rp)</label>
                             <input v-model.number="discountForm.discount_price" type="number" min="0"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <span v-if="discountForm.errors.discount_price" class="mt-1 text-xs text-red-600">{{ discountForm.errors.discount_price }}</span>
+                                class="field mt-1 block w-full">
+                            <span v-if="discountForm.errors.discount_price" class="mt-1 text-xs text-ink">{{ discountForm.errors.discount_price }}</span>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Mulai</label>
+                            <label class="lk block text-sm text-ink-soft">Mulai</label>
                             <input v-model="discountForm.discount_starts_at" type="datetime-local"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <span v-if="discountForm.errors.discount_starts_at" class="mt-1 text-xs text-red-600">{{ discountForm.errors.discount_starts_at }}</span>
+                                class="field mt-1 block w-full">
+                            <span v-if="discountForm.errors.discount_starts_at" class="mt-1 text-xs text-ink">{{ discountForm.errors.discount_starts_at }}</span>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Berakhir</label>
+                            <label class="lk block text-sm text-ink-soft">Berakhir</label>
                             <input v-model="discountForm.discount_ends_at" type="datetime-local"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <span v-if="discountForm.errors.discount_ends_at" class="mt-1 text-xs text-red-600">{{ discountForm.errors.discount_ends_at }}</span>
+                                class="field mt-1 block w-full">
+                            <span v-if="discountForm.errors.discount_ends_at" class="mt-1 text-xs text-ink">{{ discountForm.errors.discount_ends_at }}</span>
                         </div>
                     </div>
 
                     <div class="flex justify-end gap-3">
                         <button type="button" @click="clearDiscount" :disabled="discountForm.processing"
-                            class="rounded-md border border-gray-300 px-4 py-2 text-sm hover:bg-gray-50 disabled:opacity-50">
+                            class="btn-outline disabled:opacity-50">
                             Hapus Diskon
                         </button>
                         <button type="submit" :disabled="discountForm.processing"
-                            class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50">
+                            class="btn-primary disabled:opacity-50">
                             Simpan Diskon
                         </button>
                     </div>

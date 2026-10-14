@@ -15,12 +15,12 @@ const label = computed(() => (props.book.discount_source === 'flash' ? 'Flash Sa
 
 <template>
     <div class="flex flex-wrap items-center gap-2">
-        <span class="font-semibold text-blue-600">
+        <span class="lk text-ink">
             {{ effective > 0 ? 'Rp ' + effective.toLocaleString('id-ID') : 'Gratis' }}
         </span>
         <template v-if="onPromo">
-            <span class="text-sm text-gray-400 line-through">Rp {{ base.toLocaleString('id-ID') }}</span>
-            <span class="rounded bg-red-100 px-1.5 py-0.5 text-xs font-semibold text-red-600">
+            <span class="text-sm text-faint line-through">Rp {{ base.toLocaleString('id-ID') }}</span>
+            <span class="badge-overlay !h-5 !px-2 !text-[11px]">
                 {{ label }} {{ book.discount_percent }}%
             </span>
         </template>

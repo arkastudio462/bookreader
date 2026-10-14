@@ -23,39 +23,40 @@ const verificationLinkSent = computed(
 
 <template>
     <GuestLayout>
-        <Head title="Email Verification" />
+        <Head title="Verifikasi email" />
 
-        <div class="mb-4 text-sm text-gray-600">
-            Thanks for signing up! Before getting started, could you verify your
-            email address by clicking on the link we just emailed to you? If you
-            didn't receive the email, we will gladly send you another.
-        </div>
+        <h1 class="h text-3xl text-ink">Verifikasi emailmu.</h1>
+        <p class="lt mt-2 text-sm text-muted">
+            Terima kasih sudah mendaftar! Klik tautan verifikasi yang kami kirim
+            ke emailmu. Kalau belum menerima, kami bisa mengirim ulang.
+        </p>
 
         <div
-            class="mb-4 text-sm font-medium text-green-600"
             v-if="verificationLinkSent"
+            class="lk mt-4 rounded-sm bg-canvas px-4 py-3 text-sm text-ink"
         >
-            A new verification link has been sent to the email address you
-            provided during registration.
+            Tautan verifikasi baru sudah dikirim ke email yang kamu daftarkan.
         </div>
 
-        <form @submit.prevent="submit">
-            <div class="mt-4 flex items-center justify-between">
-                <PrimaryButton
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Resend Verification Email
-                </PrimaryButton>
+        <form class="mt-6 space-y-4" @submit.prevent="submit">
+            <PrimaryButton
+                class="w-full"
+                :class="{ 'opacity-50': form.processing }"
+                :disabled="form.processing"
+            >
+                Kirim ulang email verifikasi
+            </PrimaryButton>
 
+            <p class="text-center text-sm text-muted">
                 <Link
                     :href="route('logout')"
                     method="post"
                     as="button"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >Log Out</Link
+                    class="lk text-ink underline hover:text-ink-soft"
                 >
-            </div>
+                    Keluar
+                </Link>
+            </p>
         </form>
     </GuestLayout>
 </template>

@@ -12,26 +12,26 @@ defineProps({
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="text-xl font-semibold leading-tight text-gray-800">Pustaka Saya</h2>
+            <h2 class="h text-xl">Pustaka Saya</h2>
         </template>
 
         <div class="py-8">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div v-if="!books.length" class="rounded-lg bg-white p-12 text-center shadow">
-                    <p class="text-gray-600">Belum ada buku di pustaka Anda.</p>
-                    <Link :href="route('catalog.index')" class="mt-4 inline-block text-blue-600 hover:underline">
+                <div v-if="!books.length" class="card p-12 text-center">
+                    <p class="text-muted">Belum ada buku di pustaka Anda.</p>
+                    <Link :href="route('catalog.index')" class="lk mt-4 inline-block text-ink hover:underline">
                         Cari buku
                     </Link>
                 </div>
 
                 <div v-else class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-                    <div v-for="book in books" :key="book.id" class="rounded-lg bg-white p-3 shadow">
-                        <div class="aspect-[2/3] rounded bg-gray-200"></div>
-                        <h3 class="mt-2 truncate text-sm font-medium text-gray-900">{{ book.title }}</h3>
-                        <p class="truncate text-xs text-gray-600">{{ book.author_name }}</p>
+                    <div v-for="book in books" :key="book.id" class="card p-3">
+                        <div class="aspect-[2/3] rounded-sm bg-soft"></div>
+                        <h3 class="lk mt-2 truncate text-sm text-ink">{{ book.title }}</h3>
+                        <p class="lt truncate text-xs text-muted">{{ book.author_name }}</p>
                         <Link
                             :href="route('reader.show', book.id)"
-                            class="mt-2 block rounded bg-green-600 py-2 text-center text-sm font-semibold text-white hover:bg-green-700"
+                            class="btn-primary mt-2 block py-2 text-center text-sm"
                         >
                             Baca
                         </Link>

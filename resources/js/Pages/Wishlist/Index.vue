@@ -15,14 +15,14 @@ function remove(bookId) {
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="text-xl font-semibold leading-tight text-gray-800">Wishlist Saya</h2>
+            <h2 class="h text-xl">Wishlist Saya</h2>
         </template>
 
         <div class="py-12">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div v-if="wishlists.length === 0" class="rounded-lg bg-white p-12 text-center shadow">
-                    <p class="text-gray-600">Wishlist kosong.</p>
-                    <Link :href="route('catalog.index')" class="mt-4 inline-block text-blue-600 hover:underline">
+                <div v-if="wishlists.length === 0" class="card p-12 text-center">
+                    <p class="text-muted">Wishlist kosong.</p>
+                    <Link :href="route('catalog.index')" class="lk mt-4 inline-block text-ink hover:underline">
                         Jelajahi katalog
                     </Link>
                 </div>
@@ -30,19 +30,19 @@ function remove(bookId) {
                 <div v-else class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
                     <div v-for="w in wishlists" :key="w.id" class="group">
                         <Link :href="route('catalog.show', w.book.slug)">
-                            <div class="relative aspect-[2/3] rounded-lg bg-gray-200">
+                            <div class="relative aspect-[2/3] rounded-sm bg-soft">
                                 <span v-if="w.book.on_promo"
-                                    class="absolute left-2 top-2 rounded bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">
+                                    class="badge-accent absolute left-2 top-2 px-2 py-0.5 text-xs">
                                     {{ w.book.discount_source === 'flash' ? '⚡ Flash Sale' : 'Diskon' }}
                                 </span>
                             </div>
-                            <h3 class="mt-2 font-medium text-gray-900 group-hover:text-blue-600">{{ w.book.title }}</h3>
-                            <p class="text-sm text-gray-600">{{ w.book.author_name }}</p>
+                            <h3 class="lk mt-2 text-ink group-hover:text-accent">{{ w.book.title }}</h3>
+                            <p class="lt text-sm text-muted">{{ w.book.author_name }}</p>
                             <div class="mt-1">
                                 <BookPrice :book="w.book" />
                             </div>
                         </Link>
-                        <button @click="remove(w.book_id)" class="mt-2 text-sm text-red-600 hover:underline">
+                        <button @click="remove(w.book_id)" class="lk mt-2 text-sm text-muted hover:text-ink">
                             Hapus
                         </button>
                     </div>

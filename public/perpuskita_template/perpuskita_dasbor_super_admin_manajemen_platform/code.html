@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "ink": "#141414", "outline-variant": "#c2c6d8", "secondary-container": "#e2dfde", "canvas-soft": "#f3f3f3", "on-error-container": "#93000a", "inverse-on-surface": "#eff0fd", "canvas": "#ffffff", "on-secondary-fixed-variant": "#474646", "scrim": "rgba(115, 115, 115, 0.56)", "secondary-fixed-dim": "#c8c6c5", "secondary-fixed": "#e5e2e1", "secondary": "#5f5e5e", "error": "#ba1a1a", "inverse-surface": "#2e303a", "tertiary": "#a33200", "on-tertiary-fixed": "#390c00", "surface": "#faf8ff", "on-secondary-fixed": "#1c1b1b", "inverse-primary": "#b3c5ff", "on-primary-container": "#f8f7ff", "on-tertiary-fixed-variant": "#832600", "primary-fixed-dim": "#b3c5ff", "on-background": "#191b24", "primary-fixed": "#dae1ff", "surface-dim": "#d8d9e6", "on-secondary": "#ffffff", "surface-tint": "#0054d6", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#ffb59d", "on-secondary-container": "#636262", "on-surface": "#191b24", "surface-container-low": "#f2f3ff", "accent": "#0066ff", "surface-container-highest": "#e1e2ee", "on-error": "#ffffff", "error-container": "#ffdad6", "on-surface-variant": "#424656", "primary-container": "#0066ff", "surface-container": "#ecedfa", "background": "#faf8ff", "text-muted": "#707070", "outline": "#727687", "on-tertiary-container": "#fff6f4", "on-primary-fixed-variant": "#003fa4", "primary": "#0050cb", "hairline-soft": "#f0f0f0", "tertiary-container": "#cc4204", "on-primary-fixed": "#001849", "tertiary-fixed": "#ffdbd0", "surface-container-high": "#e6e7f4", "hairline": "#e0e0e0", "surface-bright": "#faf8ff", "field": "#f0f0f0", "surface-variant": "#e1e2ee", "ink-soft": "#262626", "text-faint": "#adadad" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-lg": "2rem", "space-sm": "0.5rem", "gutter-md": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "margin": "1rem", "space-md": "1rem", "margin-lg": "3rem", "margin-md": "2rem" }, "fontFamily": { "caption": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "display-mobile": ["Inter"], "body-lead": ["Inter"], "headline-md-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "display": ["Inter"], "body-md": ["Inter"], "title-lg": ["Inter"], "title-md": ["Inter"], "badge-label": ["Inter"], "action": ["Inter"] }, "fontSize": { "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0px", "fontWeight": "400" }], "headline-md": ["44px", { "lineHeight": "50px", "letterSpacing": "0px", "fontWeight": "600" }], "headline-sm": ["32px", { "lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600" }], "display-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "0px", "fontWeight": "600" }], "body-lead": ["20px", { "lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "300" }], "headline-md-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "0px", "fontWeight": "600" }], "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600" }], "headline-lg": ["56px", { "lineHeight": "56px", "letterSpacing": "0px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "400" }], "display": ["80px", { "lineHeight": "80px", "letterSpacing": "0px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0px", "fontWeight": "400" }], "title-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "0px", "fontWeight": "600" }], "title-md": ["20px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "600" }], "badge-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0px", "fontWeight": "600" }], "action": ["16px", { "lineHeight": "22px", "letterSpacing": "0px", "fontWeight": "600" }] } } } }</script></head><body class="bg-canvas text-ink font-body-md antialiased min-h-screen selection:bg-ink selection:text-canvas"><aside class="fixed left-0 top-0 h-screen w-72 bg-canvas z-50 flex flex-col justify-between border-r border-hairline"><div class="flex flex-col flex-1 overflow-y-auto"><div class="px-space-lg pt-space-lg pb-space-md border-b border-hairline-soft"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-ink flex items-center justify-center text-canvas font-headline-sm text-headline-sm select-none">P</div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-title-md text-title-md tracking-tight text-ink">PerpusKita</span><span class="bg-canvas-soft text-text-muted font-caption text-caption px-space-xs py-0.5 rounded-full border border-hairline">v2.4</span></div><span class="font-caption text-caption text-text-muted uppercase tracking-wider mt-0.5">Super Admin Console</span></div></div></div><nav class="flex-1 px-space-md py-space-lg space-y-1" data-active-classes="bg-ink text-canvas font-action"><a class="flex items-center justify-between px-space-md py-3 rounded-full text-secondary font-action text-action hover:bg-canvas-soft hover:text-ink transition-colors" data-path="ringkasan-analitik" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Ringkasan &amp; Analitik</span></div></a><a class="flex items-center justify-between px-space-md py-3 rounded-full text-secondary font-action text-action hover:bg-canvas-soft hover:text-ink transition-colors" data-path="kurasi-moderasi-naskah" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Kurasi &amp; Moderasi Naskah</span></div><span class="bg-accent text-canvas font-badge-label text-badge-label px-2 py-0.5 rounded-full">8</span></a><a class="flex items-center justify-between px-space-md py-3 rounded-full text-secondary font-action text-action hover:bg-canvas-soft hover:text-ink transition-colors" data-path="manajemen-pengguna-mitra" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span>Manajemen Pengguna &amp; Mitra</span></div></a><a class="flex items-center justify-between px-space-md py-3 rounded-full text-secondary font-action text-action hover:bg-canvas-soft hover:text-ink transition-colors" data-path="rekonsiliasi-keuangan" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Rekonsiliasi &amp; Keuangan</span></div></a><a class="flex items-center justify-between px-space-md py-3 rounded-full text-secondary font-action text-action hover:bg-canvas-soft hover:text-ink transition-colors" data-path="flash-sale-promo-global" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">loyalty</span><span>Flash Sale &amp; Promo Global</span></div></a><a class="flex items-center justify-between px-space-md py-3 rounded-full text-secondary font-action text-action hover:bg-canvas-soft hover:text-ink transition-colors" data-path="laporan-hak-cipta" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">gavel</span><span>Laporan &amp; Hak Cipta</span></div></a><a class="flex items-center justify-between px-space-md py-3 rounded-full text-secondary font-action text-action hover:bg-canvas-soft hover:text-ink transition-colors" data-path="pengaturan-sistem" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">settings</span><span>Pengaturan Sistem</span></div></a></nav></div><div class="p-space-md border-t border-hairline"><div class="flex items-center justify-between p-space-sm rounded-2xl bg-canvas-soft border border-hairline-soft"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-full bg-ink text-canvas flex items-center justify-center font-action text-action flex-shrink-0">SA</div><div class="flex flex-col min-w-0"><span class="font-title-md text-sm text-ink truncate">Kurniawan Pratama</span><span class="font-caption text-caption text-text-muted truncate">Head of Operations</span></div></div><button class="p-1.5 rounded-full text-text-muted hover:text-error hover:bg-canvas transition-colors" title="Keluar" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-canvas/90 backdrop-blur-md z-40 border-b border-hairline px-gutter-lg flex items-center justify-between"><div class="w-full max-w-xl"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-4 text-text-muted text-[20px]">search</span><input class="w-full h-11 pl-11 pr-space-lg rounded-full bg-field border-0 text-ink placeholder:text-text-faint font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-ink transition-all" placeholder="Cari pengguna, ISBN, ID transaksi, atau naskah..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-2 px-space-md py-1.5 rounded-full bg-canvas-soft border border-hairline-soft"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-caption text-caption text-secondary">Semua Sistem Normal (99.9%)</span></div><button class="relative p-2.5 rounded-full text-secondary hover:text-ink hover:bg-canvas-soft border border-hairline transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full ring-2 ring-canvas"></span></button><button class="flex items-center gap-1.5 h-10 px-space-lg rounded-full bg-ink text-canvas font-action text-action hover:opacity-90 transition-opacity" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Aksi Cepat</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 pt-20 px-gutter-lg py-space-xl bg-canvas"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Top Navigation & Global Controls -->
+<header class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg pb-space-lg border-b border-hairline">
+<div class="space-y-space-xs max-w-3xl">
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted">
+<span>Dasbor Operasional</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-ink font-semibold">Ringkasan &amp; Analitik Global</span>
+</nav>
+<h1 class="font-headline-sm text-headline-sm text-ink tracking-tight">
+        Ringkasan Operasional &amp; Ekosistem PerpusKita.
+      </h1>
+<p class="font-body-md text-body-md text-text-muted">
+        Pantau kesehatan platform, sirkulasi peredaran naskah, arus kas royalti mitra, dan tindak lanjuti moderasi penerbitan hari ini.
+      </p>
+</div>
+<!-- Quick Action Toolset -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Timeframe Segmented Control -->
+<div class="inline-flex items-center p-1 rounded-full bg-field border border-hairline-soft">
+<button class="px-space-md py-1.5 rounded-full font-action text-body-sm text-text-muted hover:text-ink transition-colors" type="button">
+          Hari Ini
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-action text-body-sm text-text-muted hover:text-ink transition-colors" type="button">
+          7 Hari Terakhir
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-action text-body-sm bg-ink text-canvas shadow-sm" type="button">
+          30 Hari Terakhir
+        </button>
+<button class="px-space-md py-1.5 rounded-full font-action text-body-sm text-text-muted hover:text-ink transition-colors" type="button">
+          Tahun 2025
+        </button>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-full bg-canvas border border-hairline text-ink font-action text-body-sm hover:bg-canvas-soft transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Ekspor Audit PDF/CSV</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-lg py-2.5 rounded-full bg-ink text-canvas font-action text-body-sm hover:opacity-90 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span>+ Buat Pengumuman</span>
+</button>
+</div>
+</header>
+<!-- Platform KPI Metrics Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<article class="p-space-lg rounded-[24px] bg-canvas border border-hairline flex flex-col justify-between hover:border-ink transition-colors">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Perputaran Bruto (GMV)</span>
+<span class="inline-flex items-center gap-0.5 px-2.5 py-0.5 rounded-full bg-canvas-soft font-badge-label text-badge-label text-ink border border-hairline-soft">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +18.4% bln lalu
+          </span>
+</div>
+<div class="font-headline-sm text-headline-sm text-ink tracking-tight pt-1">
+          Rp 428.650.000
+        </div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-hairline-soft flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<span>Bagi hasil bersih platform (30%)</span>
+<span class="font-semibold text-ink">Rp 128.595.000</span>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="p-space-lg rounded-[24px] bg-canvas border border-hairline flex flex-col justify-between hover:border-ink transition-colors">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Total Pembaca Aktif</span>
+<span class="inline-flex items-center gap-0.5 px-2.5 py-0.5 rounded-full bg-canvas-soft font-badge-label text-badge-label text-ink border border-hairline-soft">
+            +4.120 mendaftar
+          </span>
+</div>
+<div class="font-headline-sm text-headline-sm text-ink tracking-tight pt-1">
+          89.420
+        </div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-hairline-soft flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<span>Rasio membaca &gt;30 mnt/hari</span>
+<span class="font-semibold text-ink">64.8%</span>
+</div>
+</article>
+<!-- Card 3 (Electric Blue Operational Focus) -->
+<article class="p-space-lg rounded-[24px] bg-canvas border border-hairline flex flex-col justify-between hover:border-accent transition-colors relative overflow-hidden">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Antrean Moderasi Naskah</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent text-canvas font-badge-label text-badge-label">
+<span class="w-1.5 h-1.5 rounded-full bg-canvas animate-pulse"></span>
+            8 Butuh Verifikasi
+          </span>
+</div>
+<div class="font-headline-sm text-headline-sm text-ink tracking-tight pt-1">
+          18 Naskah Baru
+        </div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-hairline-soft flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<span>SLA respon moderasi kurator</span>
+<span class="font-semibold text-ink">3.4 jam kerja</span>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="p-space-lg rounded-[24px] bg-canvas border border-hairline flex flex-col justify-between hover:border-ink transition-colors">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Likuiditas Payout Mitra</span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-canvas-soft text-ink font-badge-label text-badge-label border border-hairline-soft">
+            24 Pengajuan
+          </span>
+</div>
+<div class="font-headline-sm text-headline-sm text-ink tracking-tight pt-1">
+          Rp 86.420.000
+        </div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-hairline-soft flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<span>Pencairan otomatis berkala</span>
+<span class="font-semibold text-ink">Selasa &amp; Jumat</span>
+</div>
+</article>
+</section>
+<!-- Two-Column Analytics & Financial Allocation -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Left Column: Volume Transaksi & Bar Chart (7 Cols) -->
+<article class="lg:col-span-7 p-space-lg rounded-[24px] bg-canvas border border-hairline flex flex-col justify-between space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<h2 class="font-title-md text-title-md text-ink">Volume Transaksi &amp; Pembacaan Digital</h2>
+<p class="font-caption text-caption text-text-muted">Aktivitas lisensi komersial dan peminjaman aktif 12 pekan terakhir</p>
+</div>
+<div class="flex items-center gap-1 p-1 rounded-full bg-field">
+<button class="px-3 py-1 rounded-full bg-canvas text-ink font-action text-caption shadow-sm" type="button">Pendapatan</button>
+<button class="px-3 py-1 rounded-full text-text-muted font-action text-caption hover:text-ink" type="button">Lisensi</button>
+<button class="px-3 py-1 rounded-full text-text-muted font-action text-caption hover:text-ink" type="button">Aktivitas</button>
+</div>
+</div>
+<!-- Peak Banner Highlight -->
+<div class="p-space-md rounded-2xl bg-canvas-soft border border-hairline-soft flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-ink text-[20px]">equalizer</span>
+<span class="font-body-sm text-body-sm text-ink font-medium">Rekor Penjualan Kampanye Hari Buku Nasional</span>
+</div>
+<div class="font-action text-caption text-ink font-semibold">
+          12 Nov: Rp 24.800.000 <span class="text-text-muted font-normal">(512 transaksi)</span>
+</div>
+</div>
+<!-- High-Craft SVG Column / Bar Chart -->
+<div class="w-full h-56 pt-2">
+<svg aria-label="Grafik volume transaksi bulanan" class="w-full h-full" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 600 200">
+<!-- Horizontal Grid Lines -->
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="600" y1="20" y2="20"></line>
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="600" y1="70" y2="70"></line>
+<line stroke="#f0f0f0" stroke-width="1" x1="0" x2="600" y1="120" y2="120"></line>
+<line stroke="#e0e0e0" stroke-width="1" x1="0" x2="600" y1="170" y2="170"></line>
+<!-- Bars: Month 1 (Okt) -->
+<rect fill="#f0f0f0" height="80" rx="9" width="18" x="35" y="90"></rect>
+<rect fill="#141414" height="105" rx="9" width="18" x="60" y="65"></rect>
+<rect fill="#f0f0f0" height="90" rx="9" width="18" x="85" y="80"></rect>
+<!-- Bars: Month 2 (Nov - Peak Campaign) -->
+<rect fill="#f0f0f0" height="115" rx="9" width="18" x="155" y="55"></rect>
+<rect fill="#0066ff" height="146" rx="9" width="18" x="180" y="24"></rect>
+<rect fill="#141414" height="122" rx="9" width="18" x="205" y="48"></rect>
+<!-- Bars: Month 3 (Des) -->
+<rect fill="#f0f0f0" height="100" rx="9" width="18" x="275" y="70"></rect>
+<rect fill="#141414" height="130" rx="9" width="18" x="300" y="40"></rect>
+<rect fill="#f0f0f0" height="110" rx="9" width="18" x="325" y="60"></rect>
+<!-- Bars: Month 4 (Jan) -->
+<rect fill="#f0f0f0" height="85" rx="9" width="18" x="395" y="85"></rect>
+<rect fill="#141414" height="120" rx="9" width="18" x="420" y="50"></rect>
+<rect fill="#f0f0f0" height="105" rx="9" width="18" x="445" y="65"></rect>
+<!-- Bars: Month 5 (Feb berjalan) -->
+<rect fill="#f0f0f0" height="110" rx="9" width="18" x="515" y="60"></rect>
+<rect fill="#141414" height="138" rx="9" width="18" x="540" y="32"></rect>
+<!-- Month Markers -->
+<text fill="#707070" font-family="Inter" font-size="11" text-anchor="middle" x="69" y="192">Okt 2024</text>
+<text fill="#141414" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="189" y="192">Nov (Promo)</text>
+<text fill="#707070" font-family="Inter" font-size="11" text-anchor="middle" x="309" y="192">Des 2024</text>
+<text fill="#707070" font-family="Inter" font-size="11" text-anchor="middle" x="429" y="192">Jan 2025</text>
+<text fill="#707070" font-family="Inter" font-size="11" text-anchor="middle" x="535" y="192">Feb 2025</text>
+</svg>
+</div>
+<!-- Quick Metrics Legend -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-md border-t border-hairline-soft text-text-muted font-body-sm text-body-sm">
+<div class="p-2.5 rounded-xl bg-field">
+<div class="font-caption text-caption text-text-muted">Rata-rata Transaksi</div>
+<div class="font-action text-body-md text-ink font-semibold">Rp 14.280.000 / hari</div>
+</div>
+<div class="p-2.5 rounded-xl bg-field">
+<div class="font-caption text-caption text-text-muted">Metode QRIS &amp; GoPay</div>
+<div class="font-action text-body-md text-ink font-semibold">74% Volume</div>
+</div>
+<div class="p-2.5 rounded-xl bg-field">
+<div class="font-caption text-caption text-text-muted">Kartu &amp; Virtual Account</div>
+<div class="font-action text-body-md text-ink font-semibold">26% Volume</div>
+</div>
+</div>
+</article>
+<!-- Right Column: Royalti & Margin Architecture (5 Cols) -->
+<article class="lg:col-span-5 p-space-lg rounded-[24px] bg-canvas-soft border border-hairline flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-ink">Struktur Bagi Hasil &amp; Arus Kas</h2>
+<span class="inline-flex items-center gap-1 font-caption text-caption text-ink font-semibold bg-canvas px-2.5 py-1 rounded-full border border-hairline-soft">
+<span class="material-symbols-outlined text-[14px]">lock_reset</span>
+            Smart Ledger v2
+          </span>
+</div>
+<p class="font-caption text-caption text-text-muted">
+          Penyaluran otomatis bruto ke akun royalti escrow penerbit mandiri &amp; studio mitra
+        </p>
+</div>
+<!-- Stacked Breakdown Cards -->
+<div class="space-y-space-md">
+<!-- 70% Penerbit -->
+<div class="p-space-md rounded-2xl bg-canvas border border-hairline-soft space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-action text-body-sm text-ink flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-ink"></span>
+              70% Royalti Penulis &amp; Penerbit Mandiri
+            </span>
+<span class="font-action text-body-sm font-semibold text-ink">Rp 300.055.000</span>
+</div>
+<div class="w-full bg-field rounded-full h-2">
+<div class="bg-ink h-2 rounded-full" style="width: 70%"></div>
+</div>
+<div class="font-caption text-caption text-text-muted">
+            1.240 judul terdaftar menerima akrual dividen bulan berjalan
+          </div>
+</div>
+<!-- 20% Cloud Infrastructure -->
+<div class="p-space-md rounded-2xl bg-canvas border border-hairline-soft space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-action text-body-sm text-ink flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+              20% CDN DRM &amp; Cloud Reader Edge
+            </span>
+<span class="font-action text-body-sm font-semibold text-ink">Rp 85.730.000</span>
+</div>
+<div class="w-full bg-field rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 20%"></div>
+</div>
+<div class="font-caption text-caption text-text-muted">
+            Enkripsi AES-256 berkas digital &amp; transmisi bandwidth terdistribusi
+          </div>
+</div>
+<!-- 10% Margin Bersih Platform -->
+<div class="p-space-md rounded-2xl bg-canvas border border-hairline-soft space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-action text-body-sm text-ink flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-accent"></span>
+              10% Margin Bersih Platform PerpusKita
+            </span>
+<span class="font-action text-body-sm font-semibold text-ink">Rp 42.865.000</span>
+</div>
+<div class="w-full bg-field rounded-full h-2">
+<div class="bg-accent h-2 rounded-full" style="width: 10%"></div>
+</div>
+<div class="font-caption text-caption text-text-muted">
+            Operasional audit kurasi, pengembangan sistem, dan laba ditahan
+          </div>
+</div>
+</div>
+<!-- Trust Badge -->
+<div class="p-space-sm rounded-xl bg-field flex items-center gap-space-sm font-caption text-caption text-text-muted">
+<span class="material-symbols-outlined text-ink text-[18px]">verified</span>
+<span>Semua buku terhubung ke smart-ledger otomatis. Bebas sengketa royalti dalam 90 hari terakhir.</span>
+</div>
+</article>
+</section>
+<!-- Antrean Moderasi Naskah Baru (Urgent Action Table) -->
+<section class="p-space-lg rounded-[24px] bg-canvas border border-hairline space-y-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-title-md text-title-md text-ink">Moderasi Naskah Menunggu Persetujuan</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-accent text-canvas font-badge-label text-badge-label">
+            8 Menunggu
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+          Tinjau kelayakan isi naskah, lisensi hak cipta penerbit, dan kesesuaian berkas EPUB/PDF sebelum tayang di katalog publik.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="inline-flex rounded-full bg-canvas-soft p-1 border border-hairline-soft text-caption font-action">
+<button class="px-3 py-1 rounded-full bg-canvas text-ink shadow-sm" type="button">Semua Genre</button>
+<button class="px-3 py-1 rounded-full text-text-muted hover:text-ink" type="button">Penerbit Mandiri</button>
+<button class="px-3 py-1 rounded-full text-text-muted hover:text-ink" type="button">Mitra Resmi</button>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-hairline text-text-muted font-caption text-caption uppercase tracking-wider">
+<th class="py-space-sm px-space-md font-semibold">Judul Naskah &amp; Sampul</th>
+<th class="py-space-sm px-space-md font-semibold">Penulis / Mitra</th>
+<th class="py-space-sm px-space-md font-semibold">Format &amp; Ukuran</th>
+<th class="py-space-sm px-space-md font-semibold">Waktu Masuk</th>
+<th class="py-space-sm px-space-md font-semibold">Status Validasi</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Tindakan Admin</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-hairline-soft font-body-sm text-body-sm text-ink">
+<!-- Row 1 -->
+<tr class="hover:bg-canvas-soft/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-16 rounded-lg overflow-hidden bg-field flex-shrink-0 border border-hairline-soft shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Cover of historical fiction novel Bunga Api di Lembah Merapi by Dian Sastrowardoyo, displaying deep charcoal ash textures, minimal bold typography, stark monochrome museum aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0x4f6DNOPT0alf5isyY4qkv3nr13f6Uf6beGEb4p5nHqQXrK3oSF4GiEyp1wHb2xenWZEoUwTdoEMUAoa7_DRJJid8Nj86YdKGiVQtTkf4SQ_e6TeQ87ufaLa6AcVgCxlBAZ2xodosXcTdwR-FJs9sTxb6Fer4kmyAqtHjjdZy2VQMl9itCGxXUAYoNWmaunecn33VdqKH5ZeUSZK9np4E-qR7QFEDZXJFEV2_JgYM5OwvR4y4CbmkQ"/>
+</div>
+<div class="min-w-0">
+<div class="font-semibold text-ink truncate">Bunga Api di Lembah Merapi</div>
+<div class="font-caption text-caption text-text-muted">Fiksi Sejarah • ISBN 978-623-01-2900-1</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-medium text-ink">Dian Sastrowardoyo</div>
+<div class="font-caption text-caption text-text-muted">Matapena Press (Mitra Gold)</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-field font-caption text-caption text-ink">
+                EPUB 3 + 3 Bab Sampel
+              </span>
+</td>
+<td class="py-space-md px-space-md text-text-muted">2 jam lalu</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 font-badge-label text-badge-label">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                Menunggu Review ISBN
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-3 py-1.5 rounded-full bg-ink text-canvas font-action text-caption hover:opacity-90 transition-opacity" type="button">
+                  Tinjau Berkas
+                </button>
+<button class="px-3 py-1.5 rounded-full bg-canvas border border-hairline text-ink font-action text-caption hover:bg-canvas-soft transition-colors" type="button">
+                  Setujui
+                </button>
+<button class="p-1.5 rounded-full text-text-muted hover:text-error hover:bg-field transition-colors" title="Tolak / Minta Revisi" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-canvas-soft/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-16 rounded-lg overflow-hidden bg-field flex-shrink-0 border border-hairline-soft shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Cover for technology book Kriptografi &amp; Kedaulatan Data by Ir Budi Rahardjo featuring clean cryptographic vector lines, austere black and white grid patterns, editorial Swiss design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6L6wKbB8DuT5YzSUiXya036nwpVYAQf9Wtj9gfP0zbvz-ydvbsIcJicuWIHPHCZmaJ-HjL5Rj7OuCQHKMDfkG5HahxQBML4KqOtjJJo2ZIZ_aQm8WvUTBFdzPZs6ea74GvhHAX-4MlPbm_mP8UHFXJbqnEn7xnPArx4W8RypPQgbrFiXj0P63ZII_naaqXAupX6JWOCs3oIM49ExGiHsdBM3ZRn4RPU2EcTokac5NHaF4CkzBG8LWKg"/>
+</div>
+<div class="min-w-0">
+<div class="font-semibold text-ink truncate">Kriptografi &amp; Kedaulatan Data</div>
+<div class="font-caption text-caption text-text-muted">Teknologi &amp; Komputer • 348 Halaman</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-medium text-ink">Ir. Budi Rahardjo</div>
+<div class="font-caption text-caption text-text-muted">Penerbit Mandiri (Terverifikasi)</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-field font-caption text-caption text-ink">
+                PDF Interaktif (42 MB)
+              </span>
+</td>
+<td class="py-space-md px-space-md text-text-muted">4 jam lalu</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 font-badge-label text-badge-label">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                Verifikasi Berkas DRM
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-3 py-1.5 rounded-full bg-ink text-canvas font-action text-caption hover:opacity-90 transition-opacity" type="button">
+                  Tinjau Berkas
+                </button>
+<button class="px-3 py-1.5 rounded-full bg-canvas border border-hairline text-ink font-action text-caption hover:bg-canvas-soft transition-colors" type="button">
+                  Setujui
+                </button>
+<button class="p-1.5 rounded-full text-text-muted hover:text-error hover:bg-field transition-colors" title="Tolak / Minta Revisi" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-canvas-soft/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-16 rounded-lg overflow-hidden bg-field flex-shrink-0 border border-hairline-soft shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Cover of business book Seni Negosiasi Pasar Tradisional by Hendra Kusuma with geometric market scale motifs, clean typography, stark monochrome high-contrast editorial composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZmVi68pP5AXWQhXh6LgpmvGREa73DdRV1S5-Phr3_9SRonLFPep96n2EvXnAGF2wFil3TT9obAS79Nj50Re78QjlkP1GaQGE4tCxTHQWGxq2Z1zyWXOBy8yen6726KbwVP6jMuFJSEBoUHrP52XD3Biv5bD-vF0aTZ9tyE_2s-CtZ8LJYbz_zWFE_KtHBb5mkNpK9NugFqo0lTPoAoitb2a5t16cGTzmz4xvCDShKtNTkvtReh22D3Q"/>
+</div>
+<div class="min-w-0">
+<div class="font-semibold text-ink truncate">Seni Negosiasi Pasar Tradisional</div>
+<div class="font-caption text-caption text-text-muted">Bisnis &amp; UMKM • ISBN 978-602-09-1234-8</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-medium text-ink">Hendra Kusuma</div>
+<div class="font-caption text-caption text-text-muted">Penerbit Narasi Nusantara</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-field font-caption text-caption text-ink">
+                EPUB 3 Reflowable
+              </span>
+</td>
+<td class="py-space-md px-space-md text-text-muted">6 jam lalu</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 font-badge-label text-badge-label">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                Verifikasi Royalti 70:30
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-3 py-1.5 rounded-full bg-ink text-canvas font-action text-caption hover:opacity-90 transition-opacity" type="button">
+                  Tinjau Berkas
+                </button>
+<button class="px-3 py-1.5 rounded-full bg-canvas border border-hairline text-ink font-action text-caption hover:bg-canvas-soft transition-colors" type="button">
+                  Setujui
+                </button>
+<button class="p-1.5 rounded-full text-text-muted hover:text-error hover:bg-field transition-colors" title="Tolak / Minta Revisi" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-canvas-soft/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-16 rounded-lg overflow-hidden bg-field flex-shrink-0 border border-hairline-soft shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Cover of Indonesian folklore novel Hikayat Hutan Keramat by Ratna Dewi Astuti showing shadowy misty jungle silhouette, high contrast black and grey tones, elegant modern typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ-7K2Bc4z0YsNGr6lIxRO3bHR5UgxpcBW34sYDmUt0aJIvh5bZ2QEPBtiHHDhwA2fMGJtYAybZlUN6fSUl3QnSfcgsdWR2vRWOD_8s6fSS5EpZBEdKJtlJjnDyPi1SxWsleULQopuJrfY7MBc62Lg1BBtPe7lL6717F4Z5eZlHZZb-8QxYnPh6pCdkI10hdi48uJM-jVWHN_L7Tza1BG2Ap1wuBpq853GJqyiXEyUog86VxoAM2sMZQ"/>
+</div>
+<div class="min-w-0">
+<div class="font-semibold text-ink truncate">Hikayat Hutan Keramat</div>
+<div class="font-caption text-caption text-text-muted">Sastra Nusantara • Sampul Butuh Peningkatan DPI</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-medium text-ink">Ratna Dewi Astuti</div>
+<div class="font-caption text-caption text-text-muted">Penulis Mandiri Komunitas</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-field font-caption text-caption text-ink">
+                EPUB 3 + Audio Sample
+              </span>
+</td>
+<td class="py-space-md px-space-md text-text-muted">1 hari lalu</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-50 text-rose-900 border border-rose-200 font-badge-label text-badge-label">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                Perlu Revisi Cover
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1.5 justify-end">
+<button class="px-3 py-1.5 rounded-full bg-canvas border border-hairline text-ink font-action text-caption hover:bg-canvas-soft transition-colors" type="button">
+                  Lihat Catatan Kurator
+                </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination / Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-sm font-caption text-caption text-text-muted">
+<span>Menampilkan 4 dari 8 naskah prioritas tinggi</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1.5 rounded-full bg-field hover:bg-canvas-soft text-ink" type="button">Sebelumnya</button>
+<span class="px-2 font-medium text-ink">1 / 2</span>
+<button class="px-3 py-1.5 rounded-full bg-field hover:bg-canvas-soft text-ink" type="button">Berikutnya</button>
+</div>
+</div>
+</section>
+<!-- Live Financial Ledger & Payout Queue Split -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Live Ledger Activity -->
+<article class="p-space-lg rounded-[24px] bg-canvas border border-hairline flex flex-col justify-between space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-hairline-soft">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<h2 class="font-title-md text-title-md text-ink">Ledger Transaksi Platform Real-time</h2>
+</div>
+<p class="font-caption text-caption text-text-muted">Arus kas masuk &amp; pemecahan bagi hasil instan</p>
+</div>
+<span class="font-caption text-caption text-text-muted">Sinkronisasi &lt; 2s</span>
+</div>
+<div class="space-y-space-sm flex-1">
+<!-- Event 1 -->
+<div class="p-space-sm rounded-xl bg-field flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] mt-0.5">shopping_cart</span>
+<div>
+<div class="font-action text-body-sm text-ink font-semibold">
+                Dimas N. <span class="font-normal text-text-muted">membeli lisensi digital</span> “Hujan di Atas Kota Lama”
+              </div>
+<div class="font-caption text-caption text-text-muted">
+                Bagi hasil: Penulis Rp 34.300 • Platform Rp 14.700 • QRIS BCA
+              </div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-semibold text-body-sm text-ink">+Rp 49.000</div>
+<div class="font-caption text-caption text-text-muted">2 mnt lalu</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="p-space-sm rounded-xl bg-field flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] mt-0.5">shopping_cart</span>
+<div>
+<div class="font-action text-body-sm text-ink font-semibold">
+                Siti L. <span class="font-normal text-text-muted">membeli lisensi</span> “Peta Nusantara Lama”
+              </div>
+<div class="font-caption text-caption text-text-muted">
+                Bagi hasil: Penulis Rp 43.400 • Platform Rp 18.600 • GoPay
+              </div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-semibold text-body-sm text-ink">+Rp 62.000</div>
+<div class="font-caption text-caption text-text-muted">5 mnt lalu</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="p-space-sm rounded-xl bg-field flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent text-[20px] mt-0.5">auto_stories</span>
+<div>
+<div class="font-action text-body-sm text-ink font-semibold">
+                Rian H. <span class="font-normal text-text-muted">sewa membaca 30 hari</span> “Merawat Akal Sehat”
+              </div>
+<div class="font-caption text-caption text-text-muted">
+                Potong Saldo Pembaca PerpusKita • Lisensi DRM Aktif
+              </div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-semibold text-body-sm text-ink">+Rp 18.000</div>
+<div class="font-caption text-caption text-text-muted">11 mnt lalu</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="p-space-sm rounded-xl bg-field flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] mt-0.5">shopping_cart</span>
+<div>
+<div class="font-action text-body-sm text-ink font-semibold">
+                Taufik A. <span class="font-normal text-text-muted">membeli berkas</span> “Arsitektur Batavia”
+              </div>
+<div class="font-caption text-caption text-text-muted">
+                Bagi hasil: Penerbit Rp 47.600 • Platform Rp 20.400 • Kartu Debit
+              </div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-semibold text-body-sm text-ink">+Rp 68.000</div>
+<div class="font-caption text-caption text-text-muted">18 mnt lalu</div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="inline-flex items-center gap-1 font-action text-caption text-ink font-semibold hover:underline" href="#">
+<span>Buka Semua Buku Besar Keuangan (Ledger)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Payout Pending Requests -->
+<article class="p-space-lg rounded-[24px] bg-canvas border border-hairline flex flex-col justify-between space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-hairline-soft">
+<div class="space-y-0.5">
+<h2 class="font-title-md text-title-md text-ink">Pengajuan Penarikan Saldo Mitra (Payout)</h2>
+<p class="font-caption text-caption text-text-muted">Rekonsiliasi rekening bank mitra &amp; validasi NPWP</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-field text-ink font-caption text-caption font-semibold">
+          Batch #094-FEB
+        </span>
+</div>
+<div class="space-y-space-sm flex-1">
+<!-- Payout Row 1 -->
+<div class="p-space-md rounded-2xl bg-canvas border border-hairline-soft flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="font-action text-body-sm font-semibold text-ink">Arya Wirawan</div>
+<div class="font-caption text-caption text-text-muted">BCA •••• 9812 • NPWP Terverifikasi</div>
+</div>
+<div class="text-right space-y-1">
+<div class="font-action text-body-sm font-bold text-ink">Rp 12.820.000</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-900 font-badge-label text-badge-label">
+              Siap Proses
+            </span>
+</div>
+</div>
+<!-- Payout Row 2 -->
+<div class="p-space-md rounded-2xl bg-canvas border border-hairline-soft flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="font-action text-body-sm font-semibold text-ink">Matapena Press (PT)</div>
+<div class="font-caption text-caption text-text-muted">Mandiri •••• 4401 • Faktur Pajak Tahap Klarifikasi</div>
+</div>
+<div class="text-right space-y-1">
+<div class="font-action text-body-sm font-bold text-ink">Rp 34.500.000</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 font-badge-label text-badge-label">
+              Verifikasi Pajak
+            </span>
+</div>
+</div>
+<!-- Payout Row 3 -->
+<div class="p-space-md rounded-2xl bg-canvas border border-hairline-soft flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="font-action text-body-sm font-semibold text-ink">Rocky Gerung</div>
+<div class="font-caption text-caption text-text-muted">BNI •••• 2290 • NPWP Terverifikasi</div>
+</div>
+<div class="text-right space-y-1">
+<div class="font-action text-body-sm font-bold text-ink">Rp 8.750.000</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-900 font-badge-label text-badge-label">
+              Siap Proses
+            </span>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="pt-space-xs flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="font-caption text-caption text-text-muted">
+          Penyaluran dana diproses via API Bank Indonesia BI-FAST
+        </div>
+<button class="w-full sm:w-auto px-space-md py-2.5 rounded-full bg-ink text-canvas font-action text-caption hover:opacity-90 transition-opacity" type="button">
+          Proses Semua Payout Terverifikasi (Rp 21.570.000)
+        </button>
+</div>
+</article>
+</section>
+<!-- System Health & Platform Infrastructure Status Bar -->
+<section class="p-space-md rounded-[20px] bg-canvas-soft border border-hairline">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Node 1 -->
+<div class="flex items-center gap-space-md p-space-sm rounded-xl bg-canvas border border-hairline-soft">
+<div class="w-10 h-10 rounded-full bg-field flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-ink text-[20px]">menu_book</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-body-sm text-ink truncate">Web Reader DRM Engine</span>
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+<div class="font-caption text-caption text-text-muted">Online 99.99% • Node Jakarta-1</div>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="flex items-center gap-space-md p-space-sm rounded-xl bg-canvas border border-hairline-soft">
+<div class="w-10 h-10 rounded-full bg-field flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-ink text-[20px]">cloud_sync</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-body-sm text-ink truncate">Cloudflare CDN Edge Cache</span>
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+<div class="font-caption text-caption text-text-muted">Latensi 18ms • Cache Hit Ratio 94.2%</div>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="flex items-center gap-space-md p-space-sm rounded-xl bg-canvas border border-hairline-soft">
+<div class="w-10 h-10 rounded-full bg-field flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-ink text-[20px]">database</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-body-sm text-ink truncate">Replikasi Database PostgreSQL</span>
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+<div class="font-caption text-caption text-text-muted">Sinkronisasi Normal • Lag 0.04s</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple micro-interaction for segmented control switching
+  document.querySelectorAll('header button').forEach((btn) => {
+    btn.addEventListener('click', function() {
+      const parent = this.parentElement;
+      if (parent && parent.classList.contains('bg-field')) {
+        parent.querySelectorAll('button').forEach(b => {
+          b.className = 'px-space-md py-1.5 rounded-full font-action text-body-sm text-text-muted hover:text-ink transition-colors';
+        });
+        this.className = 'px-space-md py-1.5 rounded-full font-action text-body-sm bg-ink text-canvas shadow-sm';
+      }
+    });
+  });
+</script></main><footer class="border-t border-hairline py-space-lg px-gutter-lg bg-canvas text-secondary flex flex-col sm:flex-row items-center justify-between gap-space-sm font-caption text-caption"><div class="flex items-center gap-space-sm"><span>© 2025 PerpusKita Media Digital Nusantara. Seluruh hak cipta dilindungi.</span></div><div class="flex items-center gap-space-lg text-text-muted"><a class="hover:text-ink transition-colors" href="#">Dokumentasi API</a><a class="hover:text-ink transition-colors" href="#">Pedoman Moderasi</a><a class="hover:text-ink transition-colors" href="#">Log Audit Keamanan</a></div></footer></div></body></html>

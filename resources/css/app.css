@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-canvas font-sans text-ink antialiased;
+        font-weight: 450;
+        letter-spacing: 0;
+        overscroll-behavior: none;
+    }
+
+    :focus-visible {
+        outline: 2px solid #141414;
+        outline-offset: 2px;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+}
+
+@layer components {
+    .h {
+        font-weight: 650;
+        line-height: 1.05;
+        letter-spacing: 0;
+    }
+
+    .lt {
+        font-weight: 300;
+    }
+
+    .lk {
+        font-weight: 600;
+    }
+
+    .field {
+        @apply rounded-sm bg-field px-4 py-3 text-ink placeholder:text-faint;
+    }
+
+    .field:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #141414;
+    }
+
+    .btn-primary {
+        @apply lk inline-flex h-12 items-center justify-center rounded-full bg-ink px-6 text-white transition-opacity hover:opacity-90;
+    }
+
+    .btn-outline {
+        @apply lk inline-flex h-12 items-center justify-center rounded-full border border-hair bg-canvas px-6 text-ink transition-colors hover:bg-soft;
+    }
+
+    .btn-soft {
+        @apply lk inline-flex h-12 items-center justify-center rounded-full bg-soft px-6 text-ink transition-colors hover:bg-field;
+    }
+
+    .seg-on {
+        @apply bg-canvas text-ink;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .seg-off {
+        @apply text-muted;
+    }
+
+    .card {
+        @apply rounded-md border border-hairline-soft bg-canvas p-6;
+    }
+
+    .card-soft {
+        @apply rounded-md bg-soft p-6;
+    }
+
+    .badge-overlay {
+        @apply lk inline-flex h-6 items-center rounded-full px-2.5 text-xs text-white;
+        background: rgba(115, 115, 115, 0.56);
+    }
+
+    .badge-accent {
+        @apply lk inline-flex h-7 items-center rounded-full bg-accent px-3 text-xs text-white;
+    }
+
+    .marquee {
+        animation: mq 50s linear infinite;
+    }
+
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        user-select: none;
+    }
+
+    @keyframes mq {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .marquee {
+            animation: none;
+        }
+    }
+}

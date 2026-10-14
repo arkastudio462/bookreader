@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container-highest":"#e1e2ee","on-secondary-container":"#636262","text-faint":"#adadad","ink":"#141414","inverse-primary":"#b3c5ff","on-error":"#ffffff","on-primary-container":"#f8f7ff","on-tertiary":"#ffffff","on-tertiary-fixed-variant":"#832600","surface-bright":"#faf8ff","error":"#ba1a1a","on-surface-variant":"#424656","accent":"#0066ff","on-tertiary-container":"#fff6f4","surface-variant":"#e1e2ee","field":"#f0f0f0","inverse-surface":"#2e303a","primary-fixed-dim":"#b3c5ff","tertiary":"#a33200","outline":"#727687","tertiary-fixed":"#ffdbd0","surface":"#faf8ff","text-muted":"#707070","on-error-container":"#93000a","on-primary-fixed":"#001849","primary":"#0050cb","canvas-soft":"#f3f3f3","primary-fixed":"#dae1ff","on-primary":"#ffffff","on-secondary":"#ffffff","surface-dim":"#d8d9e6","scrim":"rgba(115, 115, 115, 0.56)","primary-container":"#0066ff","on-tertiary-fixed":"#390c00","secondary-container":"#e2dfde","surface-container-high":"#e6e7f4","on-background":"#191b24","tertiary-container":"#cc4204","surface-container-lowest":"#ffffff","inverse-on-surface":"#eff0fd","hairline-soft":"#f0f0f0","surface-container-low":"#f2f3ff","ink-soft":"#262626","tertiary-fixed-dim":"#ffb59d","on-secondary-fixed-variant":"#474646","secondary-fixed":"#e5e2e1","canvas":"#ffffff","surface-tint":"#0054d6","on-secondary-fixed":"#1c1b1b","hairline":"#e0e0e0","secondary":"#5f5e5e","secondary-fixed-dim":"#c8c6c5","background":"#faf8ff","error-container":"#ffdad6","on-surface":"#191b24","surface-container":"#ecedfa","on-primary-fixed-variant":"#003fa4","outline-variant":"#c2c6d8"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3xl","full":"9999px"},"spacing":{"gutter":"1rem","space-lg":"1.5rem","margin-md":"2rem","space-sm":"0.5rem","space-md":"1rem","space-xs":"0.25rem","gutter-lg":"2rem","space-xl":"2rem","gutter-md":"1.5rem","margin-lg":"3rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md-mobile":["Inter"],"display-mobile":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"body-lead":["Inter"],"body-md":["Inter"],"caption":["Inter"],"headline-lg":["Inter"],"title-lg":["Inter"],"title-md":["Inter"],"display":["Inter"],"headline-lg-mobile":["Inter"],"action":["Inter"],"badge-label":["Inter"]},"fontSize":{"body-sm":["14px",{"lineHeight":"20px","letterSpacing":"0px","fontWeight":"400"}],"headline-md-mobile":["28px",{"lineHeight":"34px","letterSpacing":"0px","fontWeight":"600"}],"display-mobile":["48px",{"lineHeight":"52px","letterSpacing":"0px","fontWeight":"600"}],"headline-md":["44px",{"lineHeight":"50px","letterSpacing":"0px","fontWeight":"600"}],"headline-sm":["32px",{"lineHeight":"36px","letterSpacing":"0px","fontWeight":"600"}],"body-lead":["20px",{"lineHeight":"28px","letterSpacing":"0px","fontWeight":"300"}],"body-md":["16px",{"lineHeight":"22px","letterSpacing":"0px","fontWeight":"400"}],"caption":["12px",{"lineHeight":"16px","letterSpacing":"0px","fontWeight":"400"}],"headline-lg":["56px",{"lineHeight":"56px","letterSpacing":"0px","fontWeight":"600"}],"title-lg":["24px",{"lineHeight":"30px","letterSpacing":"0px","fontWeight":"600"}],"title-md":["20px",{"lineHeight":"26px","letterSpacing":"0px","fontWeight":"600"}],"display":["80px",{"lineHeight":"80px","letterSpacing":"0px","fontWeight":"600"}],"headline-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"0px","fontWeight":"600"}],"action":["16px",{"lineHeight":"22px","letterSpacing":"0px","fontWeight":"600"}],"badge-label":["12px",{"lineHeight":"16px","letterSpacing":"0px","fontWeight":"600"}]}}}};</script></head><body class="bg-canvas text-ink font-body-md"><aside class="fixed left-0 top-0 h-screen w-72 bg-canvas-soft z-50 flex flex-col justify-between py-space-lg px-space-md"><div class="flex flex-col gap-space-lg"><div class="px-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-ink flex items-center justify-center"><span class="material-symbols-outlined text-canvas text-[20px]">menu_book</span></div><div><span class="font-title-md text-title-md text-ink tracking-tight">PerpusKita</span><span class="block font-caption text-caption text-text-muted">Studio Penerbit</span></div></div><span class="px-space-sm py-space-xs rounded-full bg-accent text-on-primary font-badge-label text-badge-label uppercase tracking-wider">Studio</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-ink text-canvas font-action"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-text-muted font-body-md text-body-md hover:bg-canvas hover:text-ink transition-colors" data-path="ringkasan-penjualan" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span>Ringkasan & Penjualan</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-text-muted font-body-md text-body-md hover:bg-canvas hover:text-ink transition-colors" data-path="katalog-judul-imprint" href="#"><span class="material-symbols-outlined text-[20px]">library_books</span>Katalog Judul & Imprint</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-text-muted font-body-md text-body-md hover:bg-canvas hover:text-ink transition-colors" data-path="manajemen-penulis-kontrak" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span>Manajemen Penulis & Kontrak</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-text-muted font-body-md text-body-md hover:bg-canvas hover:text-ink transition-colors" data-path="laporan-royalti-bagi-hasil" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>Laporan Royalti & Bagi Hasil</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-text-muted font-body-md text-body-md hover:bg-canvas hover:text-ink transition-colors" data-path="pengajuan-isbn-metadata" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span>Pengajuan ISBN & Metadata</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-text-muted font-body-md text-body-md hover:bg-canvas hover:text-ink transition-colors" data-path="promosi-flash-sale" href="#"><span class="material-symbols-outlined text-[20px]">local_offer</span>Promosi & Flash Sale</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full text-text-muted font-body-md text-body-md hover:bg-canvas hover:text-ink transition-colors" data-path="pengaturan-penerbit" href="#"><span class="material-symbols-outlined text-[20px]">tune</span>Pengaturan Penerbit</a></nav></div><div class="p-space-md rounded-DEFAULT bg-canvas flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-badge-label text-badge-label text-accent uppercase tracking-wider flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px]">verified</span>Terverifikasi</span><span class="font-caption text-caption text-text-muted">PT / Publisher</span></div><div class="font-action text-action text-ink truncate">Matapena Press (PT)</div><div class="font-caption text-caption text-text-muted truncate">Penerbit Resmi Terverifikasi</div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-canvas/80 backdrop-blur-xl z-40 px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-text-faint text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md rounded-full bg-field text-ink placeholder:text-text-faint font-body-sm text-body-sm focus:outline-none focus:bg-canvas-soft" placeholder="Cari ISBN, judul buku, seri, atau nama penulis..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-field text-ink-soft font-caption text-caption"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span>Kuartal Ini (Q3 2024)</span></div><button class="w-9 h-9 rounded-full bg-field flex items-center justify-center text-ink hover:bg-canvas-soft transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><a class="flex items-center gap-space-xs h-10 px-space-lg rounded-full bg-ink text-canvas font-action text-action hover:opacity-90 transition-opacity" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Daftarkan Judul Baru</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-canvas px-gutter-lg py-space-xl"><div class="flex flex-col w-full gap-space-xl text-ink">
+<!-- SECTION 1: Publisher Header & Operational Greeting -->
+<header class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-caption font-caption text-text-muted">
+<span class="hover:text-ink cursor-pointer transition-colors">Studio Penerbit</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-ink font-action">Ringkasan & Performa Katalog</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-accent animate-pulse"></span>
+<span class="font-caption text-caption uppercase tracking-wider text-accent font-semibold">Konsol Penerbit Aktif</span>
+<span class="text-text-faint text-caption">•</span>
+<span class="font-caption text-caption text-text-muted">ID: ID-PUB-8810 (Matapena Press PT)</span>
+</div>
+<h1 class="font-headline-sm text-headline-sm tracking-tight text-ink font-semibold">
+          Dasbor Operasional Penerbit — Matapena Press
+        </h1>
+<p class="font-body-md text-body-md text-text-muted">
+          Kelola 48 judul terbitan, pantau sirkulasi royalti 18 penulis mitra, dan percepat persetujuan naskah digital secara langsung.
+        </p>
+</div>
+<!-- Quick Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="p-1 rounded-full bg-field flex items-center">
+<button class="px-space-md py-1.5 rounded-full bg-canvas text-ink font-action text-body-sm shadow-sm transition-all" type="button">30 Hari</button>
+<button class="px-space-md py-1.5 rounded-full text-text-muted hover:text-ink font-action text-body-sm transition-all" type="button">Bulan Ini</button>
+<button class="px-space-md py-1.5 rounded-full text-text-muted hover:text-ink font-action text-body-sm transition-all" type="button">Q1 2025</button>
+<button class="px-space-md py-1.5 rounded-full text-text-muted hover:text-ink font-action text-body-sm transition-all" type="button">Tahun Ini</button>
+</div>
+<button class="h-10 px-space-md rounded-full bg-canvas-soft text-ink hover:bg-hairline font-action text-body-sm inline-flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Unduh Laporan (PDF/XLS)</span>
+</button>
+<button class="h-10 px-space-lg rounded-full bg-ink text-canvas hover:opacity-90 font-action text-body-sm inline-flex items-center gap-space-xs transition-opacity" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Daftarkan Judul Baru</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SECTION 2: KPI Metrics Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Penjualan Bruto Katalog</span>
+<span class="p-2 rounded-full bg-canvas text-accent flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-title-lg text-title-lg tracking-tight font-semibold text-ink">Rp 184.250.000</span>
+<span class="font-badge-label text-badge-label text-accent font-semibold">+22.4%</span>
+</div>
+<p class="font-caption text-caption text-text-muted mt-1">
+          Bagi hasil bersih penerbit: <strong class="text-ink font-semibold">Rp 55.275.000</strong> (30%)
+        </p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Royalti Penulis Terbayar</span>
+<span class="px-2.5 py-1 rounded-full bg-accent text-on-primary font-badge-label text-badge-label flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> Escrow
+        </span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-title-lg text-title-lg tracking-tight font-semibold text-ink">Rp 128.975.000</span>
+</div>
+<p class="font-caption text-caption text-text-muted mt-1">
+          Dialirkan terverifikasi ke <strong class="text-ink font-semibold">18 penulis</strong> terikat kontrak
+        </p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Total Eksemplar Terjual</span>
+<span class="p-2 rounded-full bg-canvas text-ink flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-title-lg text-title-lg tracking-tight font-semibold text-ink">14.820</span>
+<span class="font-caption text-caption text-text-muted">eks (+3.120 bln ini)</span>
+</div>
+<p class="font-caption text-caption text-text-muted mt-1 flex items-center gap-1">
+<span>11.200 EPUB 3</span>
+<span>•</span>
+<span>3.620 PDF Interaktif</span>
+</p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Naskah dalam Proses</span>
+<span class="px-2.5 py-1 rounded-full bg-field text-ink-soft font-badge-label text-badge-label">
+          2 Perlu Revisi
+        </span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-title-lg text-title-lg tracking-tight font-semibold text-ink">6 Judul Aktif</span>
+<span class="font-badge-label text-badge-label text-accent font-semibold">SLA 2.8 Hari</span>
+</div>
+<p class="font-caption text-caption text-text-muted mt-1">
+          Kurasi metadata, ISBN Perpusnas & DRM LCP
+        </p>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Visual Analytics (65% / 35% Split) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column: Sales & Imprint Trend Chart -->
+<div class="lg:col-span-8 p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<span class="font-badge-label text-badge-label uppercase tracking-wider text-text-muted">Analisis Peredaran</span>
+<h2 class="font-title-md text-title-md font-semibold text-ink">Tren Penjualan & Pembacaan Imprint</h2>
+</div>
+<div class="flex items-center gap-1 bg-field p-1 rounded-full text-caption font-action">
+<button class="px-3 py-1 rounded-full bg-ink text-canvas" type="button">Semua Imprint</button>
+<button class="px-3 py-1 rounded-full text-text-muted hover:text-ink" type="button">Matapena Sastra</button>
+<button class="px-3 py-1 rounded-full text-text-muted hover:text-ink" type="button">Lentera</button>
+<button class="px-3 py-1 rounded-full text-text-muted hover:text-ink" type="button">Akademia</button>
+</div>
+</div>
+<!-- Peak Metric Notification Banner -->
+<div class="flex items-center justify-between p-space-sm px-space-md rounded-full bg-canvas">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-accent"></span>
+<span class="font-caption text-caption text-ink font-semibold">Rekor Tertinggi:</span>
+<span class="font-caption text-caption text-text-muted">12 Nov (Pekan Literasi Nusantara): Rp 18.400.000 / 380 eks</span>
+</div>
+<span class="font-badge-label text-badge-label text-accent bg-field px-2.5 py-0.5 rounded-full">Lonjakan +310%</span>
+</div>
+<!-- Monochrome Dynamic Column/Bar Visualization -->
+<div class="w-full h-56 pt-6 flex items-end justify-between gap-2 md:gap-3 px-2">
+<!-- Day 1 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-hairline group-hover:bg-ink transition-all relative" style="height: 48px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 3.8M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">01 Nov</span>
+</div>
+<!-- Day 2 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-hairline group-hover:bg-ink transition-all relative" style="height: 62px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 4.9M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">04 Nov</span>
+</div>
+<!-- Day 3 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-hairline group-hover:bg-ink transition-all relative" style="height: 78px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 6.2M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">07 Nov</span>
+</div>
+<!-- Day 4 (Spike) -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-accent group-hover:opacity-90 transition-all relative" style="height: 168px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-100 bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded font-semibold whitespace-nowrap pointer-events-none">Rp 18.4M</div>
+</div>
+<span class="text-[11px] font-caption text-accent font-semibold">12 Nov</span>
+</div>
+<!-- Day 5 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-ink transition-all relative" style="height: 96px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 7.8M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">15 Nov</span>
+</div>
+<!-- Day 6 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-hairline group-hover:bg-ink transition-all relative" style="height: 70px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 5.5M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">18 Nov</span>
+</div>
+<!-- Day 7 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-hairline group-hover:bg-ink transition-all relative" style="height: 84px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 6.7M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">21 Nov</span>
+</div>
+<!-- Day 8 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-hairline group-hover:bg-ink transition-all relative" style="height: 110px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 8.9M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">24 Nov</span>
+</div>
+<!-- Day 9 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-hairline group-hover:bg-ink transition-all relative" style="height: 90px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 7.2M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">27 Nov</span>
+</div>
+<!-- Day 10 -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full rounded-t-sm bg-ink transition-all relative" style="height: 125px;">
+<div class="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-ink text-canvas text-[11px] py-0.5 px-1.5 rounded whitespace-nowrap pointer-events-none">Rp 10.1M</div>
+</div>
+<span class="text-[11px] font-caption text-text-muted">30 Nov</span>
+</div>
+</div>
+<!-- Key Engagement Stats Footnote -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-sm border-t border-hairline/60">
+<div>
+<span class="font-caption text-caption text-text-muted block">Rata-rata Transaksi Harian</span>
+<span class="font-action text-action font-semibold text-ink">Rp 6.140.000 / hari</span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Konversi Preview Sample</span>
+<span class="font-action text-action font-semibold text-ink">58.6% <span class="text-caption text-accent font-normal">(+4.1%)</span></span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Rasio Baca Tuntas (>80%)</span>
+<span class="font-action text-action font-semibold text-ink">72.4% pembaca aktif</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Imprint & Licensing Breakdown -->
+<div class="lg:col-span-4 p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-badge-label text-badge-label uppercase tracking-wider text-text-muted">Komposisi Pendapatan</span>
+<h2 class="font-title-md text-title-md font-semibold text-ink">Distribusi Imprint & Lisensi</h2>
+</div>
+<!-- Imprint Contribution -->
+<div class="flex flex-col gap-space-md">
+<!-- Imprint 1 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-body-sm">
+<span class="font-action text-ink">Matapena Sastra</span>
+<span class="font-action text-ink font-semibold">54% <span class="text-caption text-text-muted font-normal">(Rp 99.4M)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-canvas overflow-hidden">
+<div class="h-full bg-ink rounded-full" style="width: 54%;"></div>
+</div>
+</div>
+<!-- Imprint 2 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-body-sm">
+<span class="font-action text-ink">Lentera Populer</span>
+<span class="font-action text-ink font-semibold">28% <span class="text-caption text-text-muted font-normal">(Rp 51.5M)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-canvas overflow-hidden">
+<div class="h-full bg-accent rounded-full" style="width: 28%;"></div>
+</div>
+</div>
+<!-- Imprint 3 -->
+<div class="flex justify-between items-center text-body-sm">
+<span class="font-action text-ink">Akademia & Riset</span>
+<span class="font-action text-ink font-semibold">18% <span class="text-caption text-text-muted font-normal">(Rp 33.1M)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-canvas overflow-hidden">
+<div class="h-full bg-text-muted rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+<!-- Licensing Models Box -->
+<div class="p-space-md rounded-DEFAULT bg-canvas flex flex-col gap-space-sm">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Model Pembelian Pembaca</span>
+<div class="flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-ink"></span>
+<span class="text-ink">Hak Milik Permanen</span>
+</div>
+<span class="font-action text-ink font-semibold">82%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-accent"></span>
+<span class="text-ink">Lisensi Kampus / Institusi</span>
+</div>
+<span class="font-action text-ink font-semibold">18%</span>
+</div>
+<p class="font-caption text-caption text-text-muted pt-1">
+          7 kemitraan universitas aktif berlangganan paket e-Library semester ini.
+        </p>
+</div>
+<button class="w-full h-10 rounded-full bg-field hover:bg-canvas text-ink font-action text-body-sm transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span>Kelola Pembagian Imprint</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- SECTION 4: Catalog Performance & Inventory Management Table -->
+<section class="flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<span class="font-badge-label text-badge-label uppercase tracking-wider text-text-muted">Katalog Utama</span>
+<h2 class="font-title-md text-title-md font-semibold text-ink">Kinerja Judul & Status Hak Cipta</h2>
+</div>
+<!-- Filter Pills & Search -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="h-9 px-space-md rounded-full bg-ink text-canvas font-action text-caption transition-all" type="button">Semua Judul (48)</button>
+<button class="h-9 px-space-md rounded-full bg-canvas-soft hover:bg-field text-ink font-action text-caption transition-all" type="button">Bestseller (8)</button>
+<button class="h-9 px-space-md rounded-full bg-canvas-soft hover:bg-field text-ink font-action text-caption transition-all" type="button">Imprint Sastra (24)</button>
+<button class="h-9 px-space-md rounded-full bg-canvas-soft hover:bg-field text-ink font-action text-caption transition-all" type="button">Imprint Populer (16)</button>
+<button class="h-9 px-space-md rounded-full bg-canvas-soft hover:bg-field text-ink font-action text-caption transition-all flex items-center gap-1" type="button">
+<span>Menunggu Validasi</span>
+<span class="w-2 h-2 rounded-full bg-accent"></span>
+</button>
+</div>
+</div>
+<!-- The Data Table Surface -->
+<div class="overflow-x-auto rounded-lg bg-canvas-soft">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-caption font-caption text-text-muted uppercase tracking-wider border-b border-hairline/60">
+<th class="py-space-md px-space-lg">Judul Buku & Pengarang</th>
+<th class="py-space-md px-space-md">ISBN & Imprint</th>
+<th class="py-space-md px-space-md text-right">Terjual</th>
+<th class="py-space-md px-space-md text-right">Harga Satuan</th>
+<th class="py-space-md px-space-md text-right">Total Bruto</th>
+<th class="py-space-md px-space-md text-center">Status Distribusi</th>
+<th class="py-space-md px-space-lg text-right">Tindakan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-hairline/40 text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-canvas transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-11 h-15 rounded object-cover shadow-sm flex-shrink-0" data-alt="Cover of the Indonesian novel Hujan di Atas Kota Lama, showing misty colonial architecture in Semarang with subtle blue ink typography and quiet moody atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJ3ej5PLUVGX2hwhRvHk6fDt-VQTWm84Tjod3t8Cvxt18ywPpQyK-oeMEc0y6rm2yggVJA2mgF1tmBEFhb19VWkUUOh3v9VNMNvbI8eNRG60ENCa63llnuiaO473nzL8UmGm5UbEbbbIvso6xacEGtcbx17TOIA_AMCnRb12erUDXOgTMOrwdyaDD-hyzSogIZiujJoOOaVkgQeV8uKmd9AGQG19bWheJGIrnljZFGcdwVFAZCwHNYg"/>
+<div class="flex flex-col min-w-0">
+<span class="font-action text-ink font-semibold truncate">Hujan di Atas Kota Lama</span>
+<span class="font-caption text-text-muted truncate">Arya Wirawan</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-caption text-ink font-mono block">978-623-09-1120-4</span>
+<span class="font-caption text-text-muted">Matapena Sastra</span>
+</td>
+<td class="py-space-md px-space-md text-right font-action text-ink">3.450 eks</td>
+<td class="py-space-md px-space-md text-right text-text-muted">Rp 49.000</td>
+<td class="py-space-md px-space-md text-right font-action font-semibold text-ink">Rp 169.050.000</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent text-on-primary font-badge-label text-badge-label">
+<span class="material-symbols-outlined text-[13px]">stars</span>
+                Bestseller
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="h-8 px-3 rounded-full bg-field hover:bg-canvas-soft text-ink font-action text-caption transition-colors" type="button">Edit</button>
+<button class="h-8 px-3 rounded-full bg-canvas hover:bg-ink hover:text-canvas text-ink font-action text-caption transition-colors" type="button">Royalti</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-canvas transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-11 h-15 rounded object-cover shadow-sm flex-shrink-0" data-alt="Book cover of Kopi, Kota, dan Kamu showing modern minimalist flat geometric illustration of a warm coffee shop window in Jakarta with calm neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2zJwiMB-MVCqdMqrSwpFyvYHI1g7zbcu0P3BBcJNeNUW08rq-3q-F5Yx-n0GtsKjSa0TM8ZL0oJL1Oxf5_tpRr9egp0iGF2HjKFTJxGr4G8rZDc93APNQWeYI_dbmMUKjxIlmAvf5wBeqVvfSoZpw7THdwR2mdiX3jiW9jPH4WxFoF7-VXN1eFIZcP2a4GfIV2yJ8ZXGAhXlNJxwVcD-qU73h4HYs063uXtWLpcGtQA_Mlp8RFQd-zA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-action text-ink font-semibold truncate">Kopi, Kota, dan Kamu</span>
+<span class="font-caption text-text-muted truncate">Bima Wicaksono & Dian S.</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-caption text-ink font-mono block">978-623-09-2341-9</span>
+<span class="font-caption text-text-muted">Lentera Populer</span>
+</td>
+<td class="py-space-md px-space-md text-right font-action text-ink">1.820 eks</td>
+<td class="py-space-md px-space-md text-right text-text-muted">Rp 45.000</td>
+<td class="py-space-md px-space-md text-right font-action font-semibold text-ink">Rp 81.900.000</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-canvas text-ink font-badge-label text-badge-label">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                Aktif
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="h-8 px-3 rounded-full bg-field hover:bg-canvas-soft text-ink font-action text-caption transition-colors" type="button">Edit</button>
+<button class="h-8 px-3 rounded-full bg-canvas hover:bg-ink hover:text-canvas text-ink font-action text-caption transition-colors" type="button">Royalti</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-canvas transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-11 h-15 rounded object-cover shadow-sm flex-shrink-0" data-alt="Cover of historical Indonesian novel Bunga Api di Lembah Merapi, displaying stark black ink landscape of Mount Merapi with volcanic smoke and red flame accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9z4Fol6YoDRQLlss7LiaE3GvT_HzfT8z7cNfPy119bMYmT4H0Jlx5Qq3HkvoXsPnOHVeiVoFeOuDkCt9i0ou6PRmGKZ2pTQTbW8lZ-eh8nPqjYVkNI7FtONj2d285q4Ex5jMjd9SVkQJJyVUPMBNHqWr9tx_MkZnn7jf3-_uNeBynLSvMFDoiU1vyg8PvWle9E8V593_HPP0LfkSzOM8BxORfZv-bt46Os0S72yGz3kRkiTkWQWwU8Q"/>
+<div class="flex flex-col min-w-0">
+<span class="font-action text-ink font-semibold truncate">Bunga Api di Lembah Merapi</span>
+<span class="font-caption text-text-muted truncate">Dian Sastrowardoyo</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-caption text-ink font-mono block">978-623-01-2900-1</span>
+<span class="font-caption text-text-muted">Matapena Sastra</span>
+</td>
+<td class="py-space-md px-space-md text-right font-action text-ink">890 eks</td>
+<td class="py-space-md px-space-md text-right text-text-muted">Rp 55.000</td>
+<td class="py-space-md px-space-md text-right font-action font-semibold text-ink">Rp 48.950.000</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-field text-text-muted font-badge-label text-badge-label">
+<span class="material-symbols-outlined text-[13px] text-accent">schedule</span>
+                Review ISBN
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="h-8 px-3 rounded-full bg-ink text-canvas hover:opacity-90 font-action text-caption transition-opacity" type="button">Perbarui</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-canvas transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-11 h-15 rounded object-cover shadow-sm flex-shrink-0" data-alt="Academic book cover Arsitektur Batavia Tempo Dulu, featuring monochrome blueprint engravings of historical Old Batavia buildings with clear editorial typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC50H98W2ilINXOZHw_J8ZTagit0nxZQ1KwMgvowztLIlxBMwGMskiRRFpTFgA6IYQHNwW_CVbRtcr2bS2GjOi088uNLoP2aN4udzo8wICZwXnZkkIayeyPjcWIplF1LtY7lH7r9FGpApnCVveTn8SW-YSpttJl3pmKViuyxfmWwkfEE51AvXwEtQVoHAuEa8yVTm4naefWeadXDQdAg9hX1VvRY6-cmYBTTs0yUIllK5L1Dc2-5oADZQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-action text-ink font-semibold truncate">Arsitektur Batavia Tempo Dulu</span>
+<span class="font-caption text-text-muted truncate">Tim Riset Sejarah</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-caption text-ink font-mono block">978-623-09-5510-2</span>
+<span class="font-caption text-text-muted">Akademia & Riset</span>
+</td>
+<td class="py-space-md px-space-md text-right font-action text-ink">640 eks</td>
+<td class="py-space-md px-space-md text-right text-text-muted">Rp 68.000</td>
+<td class="py-space-md px-space-md text-right font-action font-semibold text-ink">Rp 43.520.000</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-canvas text-ink font-badge-label text-badge-label">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                Aktif
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="h-8 px-3 rounded-full bg-field hover:bg-canvas-soft text-ink font-action text-caption transition-colors" type="button">Edit</button>
+<button class="h-8 px-3 rounded-full bg-canvas hover:bg-ink hover:text-canvas text-ink font-action text-caption transition-colors" type="button">Royalti</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Table Footer & Pagination -->
+<div class="flex flex-col sm:flex-row items-center justify-between p-space-md px-space-lg border-t border-hairline/60 gap-space-sm">
+<span class="font-caption text-caption text-text-muted">Menampilkan 4 dari total 48 naskah terdaftar</span>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-full bg-canvas text-ink font-action text-body-sm hover:bg-ink hover:text-canvas transition-colors flex items-center gap-1" type="button">
+<span>Lihat Semua 48 Judul Lengkap</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Two Auxiliary Modules (Split 50/50) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Module A: Author Royalty & Escrow Payout -->
+<div class="p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-badge-label text-badge-label uppercase tracking-wider text-text-muted">Bagi Hasil & Kontrak</span>
+<span class="px-2.5 py-0.5 rounded-full bg-accent text-on-primary font-badge-label text-badge-label">Escrow Otomatis</span>
+</div>
+<h2 class="font-title-md text-title-md font-semibold text-ink">Manajemen Royalti Penulis Mitra</h2>
+<p class="font-caption text-caption text-text-muted">Pencairan dilakukan berkala setiap tanggal 15 melalui virtual account terdaftar.</p>
+</div>
+<!-- Author Payout List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Author 1 -->
+<div class="p-space-md rounded-DEFAULT bg-canvas flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-field flex items-center justify-center font-action text-ink font-semibold">AW</div>
+<div class="flex flex-col">
+<span class="font-action text-body-sm text-ink font-semibold">Arya Wirawan</span>
+<span class="font-caption text-caption text-text-muted">Kontrak Penerbit: 70% Penulis / 30% Matapena</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-action text-body-sm text-ink font-semibold block">Rp 24.150.000</span>
+<span class="font-badge-label text-badge-label text-accent">Terjadwal 15 Feb</span>
+</div>
+</div>
+<!-- Author 2 -->
+<div class="p-space-md rounded-DEFAULT bg-canvas flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-field flex items-center justify-center font-action text-ink font-semibold">DS</div>
+<div class="flex flex-col">
+<span class="font-action text-body-sm text-ink font-semibold">Dian Sastrowardoyo</span>
+<span class="font-caption text-caption text-text-muted">Kontrak Penerbit: 65% Penulis / 35% Matapena</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-action text-body-sm text-ink font-semibold block">Rp 16.800.000</span>
+<span class="font-badge-label text-badge-label text-accent">Terjadwal 15 Feb</span>
+</div>
+</div>
+<!-- Author 3 -->
+<div class="p-space-md rounded-DEFAULT bg-canvas flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-field flex items-center justify-center font-action text-ink font-semibold">BW</div>
+<div class="flex flex-col">
+<span class="font-action text-body-sm text-ink font-semibold">Bima Wicaksono</span>
+<span class="font-caption text-caption text-text-muted">Kontrak Penerbit: 70% Penulis / 30% Matapena</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-action text-body-sm text-ink font-semibold block">Rp 9.450.000</span>
+<span class="font-badge-label text-badge-label text-ink">Terverifikasi</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-10 rounded-full bg-canvas hover:bg-field text-ink font-action text-body-sm transition-colors text-center" type="button">
+          Kelola Kontrak Penulis
+        </button>
+<button class="flex-1 h-10 rounded-full bg-field hover:bg-canvas text-ink font-action text-body-sm transition-colors text-center" type="button">
+          Rekonsiliasi Pajak PPh 23
+        </button>
+</div>
+</div>
+<!-- Module B: ISBN & DRM Processing Pipeline -->
+<div class="p-space-lg rounded-lg bg-canvas-soft flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-badge-label text-badge-label uppercase tracking-wider text-text-muted">Legalitas & Proteksi</span>
+<span class="px-2.5 py-0.5 rounded-full bg-field text-ink font-badge-label text-badge-label">2 Dalam Antrean</span>
+</div>
+<h2 class="font-title-md text-title-md font-semibold text-ink">Pengajuan ISBN, DRM & Persetujuan Naskah</h2>
+<p class="font-caption text-caption text-text-muted">Enkripsi Readium LCP dan integrasi otomatis metadata Perpusnas RI.</p>
+</div>
+<!-- Submission Progress Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- Submission 1 -->
+<div class="p-space-md rounded-DEFAULT bg-canvas flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-action text-body-sm text-ink font-semibold block">Sengketa Tak Bernama</span>
+<span class="font-caption text-caption text-text-muted">Format: EPUB 3 + Audio Narasi • Penulis: Reza Andana</span>
+</div>
+<span class="font-action text-body-sm font-semibold text-accent">75%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-canvas-soft overflow-hidden">
+<div class="h-full bg-accent rounded-full" style="width: 75%;"></div>
+</div>
+<div class="flex items-center gap-space-xs text-caption text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-accent">check_circle</span>
+<span>Verifikasi DRM LCP Selesai • Menunggu Nomor ISBN Perpusnas</span>
+</div>
+</div>
+<!-- Submission 2 -->
+<div class="p-space-md rounded-DEFAULT bg-canvas flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-action text-body-sm text-ink font-semibold block">Catatan Pinggir Pesisir</span>
+<span class="font-caption text-caption text-text-muted">Format: PDF Interaktif • Penulis: Ratna Ayu</span>
+</div>
+<span class="font-action text-body-sm font-semibold text-ink">40%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-canvas-soft overflow-hidden">
+<div class="h-full bg-ink rounded-full" style="width: 40%;"></div>
+</div>
+<div class="flex items-center gap-space-xs text-caption text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-text-faint">hourglass_top</span>
+<span>Uji Tata Letak Reader & Reflow Engine Sedang Berjalan</span>
+</div>
+</div>
+</div>
+<!-- Submission Button -->
+<button class="w-full h-10 rounded-full bg-ink text-canvas hover:opacity-90 font-action text-body-sm transition-opacity flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Kirim Berkas Naskah Tambahan</span>
+</button>
+</div>
+</section>
+<!-- SECTION 6: Bottom Trust & Legal Compliance Strip -->
+<footer class="p-space-md px-space-lg rounded-DEFAULT bg-canvas-soft flex flex-col md:flex-row items-center justify-between text-caption font-caption text-text-muted gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px] text-accent">verified_user</span>
+<span>Perjanjian Lisensi Penerbit Resmi ID-PUB-8810 • Terhubung Smart-Ledger Escrow PerpusKita</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>Standar Perlindungan DRM: ISO/IEC 19757</span>
+<span>•</span>
+<span class="text-ink font-action cursor-pointer hover:underline">Ketentuan Bagi Hasil ↗</span>
+</div>
+</footer>
+</div>
+<script>
+  // Simple micro-interaction for the period selector toolbar pills
+  document.querySelectorAll('header .bg-field button').forEach(button => {
+    button.addEventListener('click', function() {
+      const parent = this.parentElement;
+      parent.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('bg-canvas', 'text-ink', 'shadow-sm');
+        btn.classList.add('text-text-muted');
+      });
+      this.classList.add('bg-canvas', 'text-ink', 'shadow-sm');
+      this.classList.remove('text-text-muted');
+    });
+  });
+</script></main></div></body></html>

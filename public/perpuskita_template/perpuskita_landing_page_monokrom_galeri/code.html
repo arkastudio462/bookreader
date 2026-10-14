@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>PerpusKita</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#cc4204", "on-surface-variant": "#424656", "surface-dim": "#d8d9e6", "secondary": "#5f5e5e", "canvas-soft": "#f3f3f3", "text-muted": "#707070", "ink": "#141414", "on-primary": "#ffffff", "on-primary-container": "#f8f7ff", "outline-variant": "#c2c6d8", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "on-tertiary-fixed": "#390c00", "surface-container": "#ecedfa", "on-error": "#ffffff", "inverse-surface": "#2e303a", "on-secondary-fixed": "#1c1b1b", "tertiary-fixed": "#ffdbd0", "primary-fixed-dim": "#b3c5ff", "scrim": "rgba(115, 115, 115, 0.56)", "surface-container-high": "#e6e7f4", "field": "#f0f0f0", "text-faint": "#adadad", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "primary-container": "#0066ff", "secondary-fixed": "#e5e2e1", "on-background": "#191b24", "hairline-soft": "#f0f0f0", "surface-container-highest": "#e1e2ee", "inverse-on-surface": "#eff0fd", "on-primary-fixed-variant": "#003fa4", "secondary-container": "#e2dfde", "accent": "#0066ff", "primary": "#0050cb", "hairline": "#e0e0e0", "inverse-primary": "#b3c5ff", "secondary-fixed-dim": "#c8c6c5", "on-secondary-container": "#636262", "on-secondary-fixed-variant": "#474646", "error": "#ba1a1a", "outline": "#727687", "ink-soft": "#262626", "on-surface": "#191b24", "surface-bright": "#faf8ff", "on-tertiary-container": "#fff6f4", "tertiary-fixed-dim": "#ffb59d", "canvas": "#ffffff", "surface": "#faf8ff", "on-tertiary-fixed-variant": "#832600", "tertiary": "#a33200", "primary-fixed": "dae1ff", "on-primary-fixed": "#001849", "error-container": "#ffdad6", "surface-variant": "#e1e2ee", "surface-tint": "#0054d6", "background": "#faf8ff", "surface-container-low": "#f2f3ff" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "gutter-lg": "2rem", "margin": "1rem", "gutter": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "margin-md": "2rem", "margin-lg": "3rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-md": "1.5rem" }, "fontFamily": { "headline-md-mobile": ["Inter"], "display-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "body-lead": ["Inter"], "title-md": ["Inter"], "body-sm": ["Inter"], "display": ["Inter"], "title-lg": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "caption": ["Inter"], "headline-sm": ["Inter"], "badge-label": ["Inter"], "action": ["Inter"], "headline-md": ["Inter"] }, "fontSize": { "headline-md-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "0px", "fontWeight": "600" }], "display-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "0px", "fontWeight": "600" }], "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600" }], "body-lead": ["20px", { "lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "300" }], "title-md": ["20px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "400" }], "display": ["80px", { "lineHeight": "80px", "letterSpacing": "0px", "fontWeight": "600" }], "title-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "0px", "fontWeight": "600" }], "headline-lg": ["56px", { "lineHeight": "56px", "letterSpacing": "0px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0px", "fontWeight": "400" }], "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0px", "fontWeight": "400" }], "headline-sm": ["32px", { "lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600" }], "badge-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0px", "fontWeight": "600" }], "action": ["16px", { "lineHeight": "22px", "letterSpacing": "0px", "fontWeight": "600" }], "headline-md": ["44px", { "lineHeight": "50px", "letterSpacing": "0px", "fontWeight": "600" }] } } } };</script></head><body class="bg-canvas text-ink font-body-md text-body-md min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 pointer-events-none pt-space-sm"><div class="max-w-[1440px] mx-auto px-margin-lg"><div class="h-20 flex items-center justify-center"><div class="pointer-events-auto bg-canvas-soft rounded-full pl-space-md pr-space-sm py-space-xs flex items-center justify-between gap-space-lg w-full max-w-[1080px]"><a class="flex items-center gap-space-sm" data-path="katalog" href="#"><div class="w-9 h-9 rounded-[10px] bg-ink flex items-center justify-center text-on-primary font-title-md text-title-md select-none">P</div><span class="font-title-md text-title-md text-ink tracking-tight">PerpusKita</span></a><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-ink font-semibold"><a aria-current="page" class="transition-colors text-ink font-semibold" data-path="katalog" href="#">Katalog</a><a class="font-action text-action text-text-muted hover:text-ink transition-colors" data-path="flash-sale" href="#">Flash sale</a><a class="font-action text-action text-text-muted hover:text-ink transition-colors" data-path="penulis-dan-penerbit" href="#">Penulis &amp; penerbit</a><a class="font-action text-action text-text-muted hover:text-ink transition-colors" data-path="masuk" href="#">Masuk</a></nav><div class="flex items-center gap-space-sm"><a class="px-space-lg py-space-sm bg-ink text-on-primary rounded-full font-action text-action hover:opacity-90 transition-opacity" data-path="daftar-gratis" href="#">Daftar gratis</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></div></header><main class="w-full pt-20 bg-canvas"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg pt-16 pb-20 text-center">
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<h1 class="font-display text-display text-ink tracking-tight font-semibold">
+        Baca, beli, dan terbitkan buku. Semuanya di satu tempat.
+      </h1>
+<p class="font-body-lead text-body-lead text-text-muted max-w-2xl mx-auto mt-6">
+        Toko buku digital dengan reader EPUB dan PDF langsung di browser, promo yang rutin datang, dan bagi hasil yang jelas untuk penulis dan penerbit.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+<a class="px-8 py-3.5 bg-ink text-on-primary rounded-full font-action text-action hover:opacity-90 transition-opacity" data-path="katalog" href="#">
+          Mulai membaca
+        </a>
+<a class="px-8 py-3.5 bg-canvas text-ink border border-hairline rounded-full font-action text-action hover:bg-canvas-soft transition-colors" data-path="daftar-penulis" href="#">
+          Daftar penulis
+        </a>
+<a class="px-8 py-3.5 bg-canvas-soft text-ink rounded-full font-action text-action hover:bg-field transition-colors" data-path="penulis-dan-penerbit" href="#">
+          Jadi penerbit ↗
+        </a>
+</div>
+</div>
+</section>
+<!-- SECTION 2: MARQUEE COVER BUKU FULL-BLEED -->
+<section class="w-full overflow-hidden py-6 bg-canvas">
+<div class="flex gap-6 px-margin-lg min-w-max animate-[scroll_40s_linear_infinite] hover:[animation-play-state:paused]">
+<!-- Book 1 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of an Indonesian contemporary fiction novel titled 'Hujan di Atas Kota Lama', featuring a minimalist vintage street watercolor painting of Kota Tua Jakarta under soft rainy mist, deep charcoal and paper white tones, elegant modern typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk4w8qzjfIEn4mBhQyZc7SON7yvsekEiNKvc7OxVdEQNxoG_TSP8Pcr0ULAUBeZkitzZ2YcwbB9hO1dQAUa2PmVjlE_fOtXepxADuogBFVoY7qIPPu7KUi1g4LDVLnVZNrWobl6xtZs7IcPXZ2numYblkix7IbzhyloyJ6tgr3FvoTw15yu1w6cVg7XfGc6zmkKXTl3O2_bOWnGVBma4X0CnE41-zGJMXR56fhWmNC9UyW7JZ144eQSQ"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Hujan di Atas Kota Lama</p>
+<p class="font-caption text-caption text-text-muted">Arya Wirawan</p>
+</div>
+<!-- Book 2 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of a lifestyle urban essay book titled 'Kopi, Kota, dan Kamu', warm terracotta and ivory screenprinted graphic design of steam swirling over a ceramic cup on an architectural table, Swiss typographic layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPCSnDMIoNFI6IYPrWmpmWcpR9GHDa6gQJBJmuV4FipV0399_lx38t-rhP0B_1tCjUclVj2tYQFioE0DQSh3G6j6hUY4TADYcgD1fOuyod9VsRvveXPsqqljwiuQPlbUouPrd7OtW6w0XYCslWTkyG9ayjWnwRvlJGaD4lzX1Rb6PHLnpdb0BsF1z3YgCDqO2XS8Cs1DKsttAp43FOTXG77VoeHNM8fGedS3faIhGt9TtxTVrHCC9wWw"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Kopi, Kota, dan Kamu</p>
+<p class="font-caption text-caption text-text-muted">Dian Sastrowardoyo</p>
+</div>
+<!-- Book 3 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of a historic cartography book titled 'Peta Nusantara Lama', fine-line antique maritime navigation lines, rich ochre and deep indigo nautical map detailing Indonesian archipelagos with clean serif typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf1Ffdow9zU3eHKynhd8sxvFydhox32sBArwdc4AGPmQc0P1xYtMY1Brjsv01VrShqjrzz7BCnQlROnkQUe6vo20N0SVOQabuuf1jn2f1zMp-nRWKJxuNWhfhGI9lJOh4do_jhBiCRpfEMHFR6IsWjb76koyJsUL5_4bLO9g_GP_2IEVXpO2ZBemJxdaPztjZ2PGvbLrkZlqANLD1HJYFpa8U7k19g1mwUykVwBDftRao8UkEB3ByS1A"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Peta Nusantara Lama</p>
+<p class="font-caption text-caption text-text-muted">Bambang Haryo</p>
+</div>
+<!-- Book 4 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of a nocturnal novel titled 'Malam di Malioboro', midnight blue and neon amber ambient street lighting in Yogyakarta, silhouettes of street musicians, stark stark modernist layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe1APk6Vcy2ENic34n4kDPXljWaLgVT6QowCA0Uean2SEwW-wyc7RVAFymRr8uhHMlz5j607-6Zo8C-Noofj3Ox4ZsWBGH3RMJ4ZM01Qkl9pAiA6iBtKQhK0GftHCIDA0zGK1fdrTu1VwcZXodCA5CdJ4V0H1mSHvCGGUuNcwfV7OV5KHOIQDUh8OPr7p_9urooLn4n3x4DmmDu_vguRsb8S-lLT7aepXDBm3AsudZt9XI4wRKoauRwg"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Malam di Malioboro</p>
+<p class="font-caption text-caption text-text-muted">Ratih Kumala</p>
+</div>
+<!-- Book 5 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of a colonial design book titled 'Arsitektur Batavia', geometric architectural line drawing of Art Deco facade in Jakarta, stone gray background with sharp stark typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAORoMQojqo2ssxkFJsbkPTBN-T55tNU4U7m5BKwr9m8F9YvFCS6CUgy6kzOwduNm8LSLRQ93xKHxM80XHP8wq2i6VTjpLAfpw85H9_5IdQTc307QFr2RO92dvSY2kjBjd0F8PgZIcd8HzIeyuDVywqu8bcRWr--YjBy4M0B44dkZpYLOUsXwUJuAaMyC9qSLt9PVsQcgn6xOAOEL9icKFknTQQ2rdv-Vawunu86UThM-PF3FgqorTHgA"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Arsitektur Batavia</p>
+<p class="font-caption text-caption text-text-muted">Prof. Handoko</p>
+</div>
+<!-- Book 6 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of an Indonesian seafaring literary narrative titled 'Laut yang Memanggil', deep cyan and seafoam lithograph of traditional Phinisi sailboat cutting calm ocean waves under moonlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH7ZRS5yuVIJkHFPmwrl0uA3Sd31FqWUViFd6br3IHoAjnSY4VYNbkggam_COqfaq-Ot3EZ0KUg4HoFRxjeIBRyPYbhuB2sA3XQYSKtMPCIMDCM0zBdYn2K8prtAA5h7wbVLmTnEc_xojc98gIygiHMZxRH_eNfIh-KWzTArnIHCbIa6TXLowd99SPxi8yheeYjWL2WykyztBFp5tARjXc2cGPqSWXpIocnHPrqWPMDghlSCj1LHj9FQ"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Laut yang Memanggil</p>
+<p class="font-caption text-caption text-text-muted">Gibran Mahesa</p>
+</div>
+<!-- Book 7 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of an expedition journal titled 'Garis Batas Khatulistiwa', lush emerald rainforest canopy with high contrast geometric equator coordinate line overlay, modern editorial look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Hm1H-OPtlw0RuYyhY--CUpuzHNaiGdfPl6kcx2L0jbRDrkikfwmrV2WOxquGh0k0-hG6vF3RdG40taMyUKjGwovp5Mjgp9dtBpKYuxcp_lBy1W_IqoDDWDhKizEnnVHdwFNi9kRU842B5lPIxMs5w-X8XcO9mBo-A4TFTdjqXo3_PtMt4fbJpKMwG7cI1OkAUCK9o3RWl2Fxz1yy8GD9H8kb-s0ijzcqJlbgOPbI4_xeNU_jtzQoeA"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Garis Batas Khatulistiwa</p>
+<p class="font-caption text-caption text-text-muted">Sinta Nuriyah</p>
+</div>
+<!-- Book 8 -->
+<div class="w-56 shrink-0 group cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-field relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of a poetry anthology titled 'Renjana Senja', atmospheric fiery orange gradient into velvety twilight purple with minimalist poetic title in crisp white lowercase type" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ1Gkg72gZ54PBJ1GvdhWD2yZAEX5eXrmocRckO6xIoCCfkBzlgbI8XL3SYkuJiqvMripKsHTaAocej0mxctRnZGA51R6vMeuGhHsQghprQMYAat0J9E12X0I9gg4U7FC_vczIekc4gW2VDzCXK5-q8GDzSNMPux6fhex7LJSJsYeuhy7-6pesHLGtH-1jGQShnARVSW3RMcYSjGoe2g02q-1PC2jcWOst4qCi9wdjNoi0j_YlMScBJA"/>
+</div>
+<p class="font-title-md text-title-md text-ink mt-3 truncate">Renjana Senja</p>
+<p class="font-caption text-caption text-text-muted">Damar Sasongko</p>
+</div>
+</div>
+</section>
+<!-- SECTION 3: FLASH SALE -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg py-20">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-accent text-on-primary rounded-full font-badge-label text-badge-label mb-3">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>Flash sale</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-ink font-semibold tracking-tight">
+          Harga turun, waktunya terbatas.
+        </h2>
+<p class="font-body-md text-body-md text-text-muted mt-1">
+          Harga kembali normal saat hitung mundur selesai.
+        </p>
+</div>
+<!-- Countdown -->
+<div class="flex items-center gap-3">
+<div class="bg-canvas-soft rounded-2xl p-4 w-20 text-center">
+<span class="font-title-lg text-title-lg text-ink font-semibold block leading-none" id="timer-hours">04</span>
+<span class="font-caption text-caption text-text-muted mt-1 block">Jam</span>
+</div>
+<div class="bg-canvas-soft rounded-2xl p-4 w-20 text-center">
+<span class="font-title-lg text-title-lg text-ink font-semibold block leading-none" id="timer-mins">38</span>
+<span class="font-caption text-caption text-text-muted mt-1 block">Menit</span>
+</div>
+<div class="bg-canvas-soft rounded-2xl p-4 w-20 text-center">
+<span class="font-title-lg text-title-lg text-ink font-semibold block leading-none" id="timer-secs">19</span>
+<span class="font-caption text-caption text-text-muted mt-1 block">Detik</span>
+</div>
+</div>
+</div>
+<!-- 5-Column Book Cards -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover design for Indonesian best seller 'Hujan di Atas Kota Lama', vintage cityscape art with rain motif, muted slate and white minimal layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwXCsKHjkXHn_NV0RKpJdRMRKKiu9GLCJc8qEBYUv4qiGgnYH3RsqAdVzE3XHI6mt89CBq5JERwiqsi-fZ0gCIxuz3Dp1-UudnaH4v6VULOrh85TvE7E9uDqwCcjJFN_1z0l1DvpDt5V8aQm0B_wqg_XbtjKXJDj0Hk9R9ypRuW16ro77wS82GFXjpCH3wK78gGHSBwnkqczbBj9_0w0jzjIxvWyklCtiGrCbdSrdbHsG2coxJ4AK_Fg"/>
+<div class="absolute top-2.5 left-2.5 bg-scrim text-on-primary px-2.5 py-1 rounded-full font-badge-label text-badge-label">
+            Diskon 30%
+          </div>
+<button aria-label="Simpan ke wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Hujan di Atas Kota Lama</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Arya Wirawan • ★ 4.9</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp49.000</span>
+<span class="font-caption text-caption text-text-faint line-through">Rp70.000</span>
+</div>
+<div class="w-full bg-field h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-ink h-full rounded-full w-[68%]"></div>
+</div>
+<span class="font-caption text-caption text-text-muted mt-1.5 block">Terjual 68%</span>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of philosophy book titled 'Filosofi Teras Kota', bold typographic design with classical statue profile combined with modern city architectural outlines, olive and ivory palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMiDtYEg1btOfPjcyQ2gOJ4WOUx6O0nbgLhwRxMee2vHWfti0aki-tz_01X6rTnU7og3BrIUM0U8sKc6t3YkBB6sezVE7r4OUYh8J9Ev1pueE06EvH6s_VeiVWLiwyuwM7ne557HhWtk_A7o6wvFcYprw9Fs6aIo1tWASmJnSbnE8w_oJoh7QjDoWuMOvIPCTnKS7bJibF2xtTQOreGsQ59MbQRYs-09154ehEOTbcZoETb6UhCtnFGA"/>
+<div class="absolute top-2.5 left-2.5 bg-scrim text-on-primary px-2.5 py-1 rounded-full font-badge-label text-badge-label">
+            Diskon 25%
+          </div>
+<button aria-label="Simpan ke wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Filosofi Teras Kota</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Henry Manampiring • ★ 4.8</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp56.250</span>
+<span class="font-caption text-caption text-text-faint line-through">Rp75.000</span>
+</div>
+<div class="w-full bg-field h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-ink h-full rounded-full w-[82%]"></div>
+</div>
+<span class="font-caption text-caption text-text-muted mt-1.5 block">Terjual 82%</span>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of writing productivity manual titled 'Seni Menulis Cepat', sharp minimalist yellow and matte black visual with lightning bolt motif and clean Helvetica typesetting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-48xjprCZwwNMqHoW53m_te60HPL9KfxckrvYpzRfv7Ezp-NEkixl9RLTy39H2nAJbiH35Di8HufguhG11pF2NiWiFDA3O_dlaDtHykNcn4_TR1GJHccnpk4QMffEPfBXFEe5vrpHrTe_pCMJsfbT_TA9DdtuxUVa2eKT8u7Nr8jo5DXhRWynMyDOa4EZA2I6x7AicZpno8gURlrDM55D8muqcDKmE5ZqCsnOuSMbGOOKBEH8j_XT3Q"/>
+<div class="absolute top-2.5 left-2.5 bg-scrim text-on-primary px-2.5 py-1 rounded-full font-badge-label text-badge-label">
+            Diskon 40%
+          </div>
+<button aria-label="Simpan ke wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Seni Menulis Cepat</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Dewi Lestari • ★ 4.7</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp42.000</span>
+<span class="font-caption text-caption text-text-faint line-through">Rp70.000</span>
+</div>
+<div class="w-full bg-field h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-ink h-full rounded-full w-[45%]"></div>
+</div>
+<span class="font-caption text-caption text-text-muted mt-1.5 block">Terjual 45%</span>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Indonesian history culinary travel book titled 'Jejak Rempah Nusantara', rich cinnamon and nutmeg botanical illustrations on parchment paper with bold editorial typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6qtDG8uXnxrM77lMqSUrH6FvNyCjS8uudy3q4SCABDsDZP9xKLcU1j3nRH6D4X8p_cIvOF9-6scpVIAINzfphsyoxSwujpDfyuMBJN3Vquzh6Mwhg0U76O0BKbEdtiZT610Z3sxGdz5dCctmOtWqdWs7krFJl_J_UfE7gj1tl2KCyaF7ooWZpSQdn-63AiTBUkL-yamD2zChb8jr1J018onkI9MHm7YVtKcgYwgkERdg7C9WX5SQ_RA"/>
+<div class="absolute top-2.5 left-2.5 bg-scrim text-on-primary px-2.5 py-1 rounded-full font-badge-label text-badge-label">
+            Diskon 35%
+          </div>
+<button aria-label="Simpan ke wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Jejak Rempah Nusantara</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Bondan Winarno • ★ 4.9</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp58.500</span>
+<span class="font-caption text-caption text-text-faint line-through">Rp90.000</span>
+</div>
+<div class="w-full bg-field h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-ink h-full rounded-full w-[91%]"></div>
+</div>
+<span class="font-caption text-caption text-text-muted mt-1.5 block">Terjual 91%</span>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of technology philosophy book titled 'Algoritma Jiwa', glowing cyan neural network intertwined with human anatomical heart lines, matte dark graphite surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAKqlF3uUK3hn-fItlqPkc8xe5Jf1ljpYVyQw7ooHSMcZ8ffvB6U0_QG0MoJRkJtrUNV-0KV9Wgo7afk85VKEgocUW9K5yuy-V58Gvub7I97XcNlYoAr2aIJ_meoidnPd65p1DCUeQ_E56l4qW_HHkc7Ar38_8lO2vP9_W25Gf3pvGhdsWt_2UKRqqmwXoqAQoOy7thL4lUjK7ELTXyq3yr2DxGqkNN0UEfRM30eLzS2q9occiIbpT3Q"/>
+<div class="absolute top-2.5 left-2.5 bg-scrim text-on-primary px-2.5 py-1 rounded-full font-badge-label text-badge-label">
+            Diskon 20%
+          </div>
+<button aria-label="Simpan ke wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Algoritma Jiwa</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Dr. Ilham Habibie • ★ 4.8</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp64.000</span>
+<span class="font-caption text-caption text-text-faint line-through">Rp80.000</span>
+</div>
+<div class="w-full bg-field h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-ink h-full rounded-full w-[54%]"></div>
+</div>
+<span class="font-caption text-caption text-text-muted mt-1.5 block">Terjual 54%</span>
+</div>
+</div>
+</section>
+<!-- SECTION 4: KATEGORI POPULER -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg py-16">
+<h2 class="font-headline-sm text-headline-sm text-ink font-semibold tracking-tight mb-8">
+      Jelajahi menurut kategori.
+    </h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<!-- 1 -->
+<a class="bg-canvas-soft rounded-[24px] p-6 hover:bg-field transition-colors flex flex-col justify-between group" data-path="kategori-fiksi" href="#">
+<div class="w-14 h-14 bg-canvas rounded-[30%] flex items-center justify-center text-ink mb-4">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">auto_stories</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink font-semibold">Fiksi</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">2.410 buku</p>
+</div>
+</a>
+<!-- 2 -->
+<a class="bg-canvas-soft rounded-[24px] p-6 hover:bg-field transition-colors flex flex-col justify-between group" data-path="kategori-bisnis" href="#">
+<div class="w-14 h-14 bg-canvas rounded-[30%] flex items-center justify-center text-ink mb-4">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">trending_up</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink font-semibold">Bisnis</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">1.180 buku</p>
+</div>
+</a>
+<!-- 3 -->
+<a class="bg-canvas-soft rounded-[24px] p-6 hover:bg-field transition-colors flex flex-col justify-between group" data-path="kategori-sejarah" href="#">
+<div class="w-14 h-14 bg-canvas rounded-[30%] flex items-center justify-center text-ink mb-4">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">account_balance</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink font-semibold">Sejarah</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">890 buku</p>
+</div>
+</a>
+<!-- 4 -->
+<a class="bg-canvas-soft rounded-[24px] p-6 hover:bg-field transition-colors flex flex-col justify-between group" data-path="kategori-pengembangan-diri" href="#">
+<div class="w-14 h-14 bg-canvas rounded-[30%] flex items-center justify-center text-ink mb-4">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">psychology</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink font-semibold">Pengembangan diri</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">1.520 buku</p>
+</div>
+</a>
+<!-- 5 -->
+<a class="bg-canvas-soft rounded-[24px] p-6 hover:bg-field transition-colors flex flex-col justify-between group" data-path="kategori-teknologi" href="#">
+<div class="w-14 h-14 bg-canvas rounded-[30%] flex items-center justify-center text-ink mb-4">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">code</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink font-semibold">Teknologi</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">940 buku</p>
+</div>
+</a>
+<!-- 6 -->
+<a class="bg-canvas-soft rounded-[24px] p-6 hover:bg-field transition-colors flex flex-col justify-between group" data-path="kategori-anak" href="#">
+<div class="w-14 h-14 bg-canvas rounded-[30%] flex items-center justify-center text-ink mb-4">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">child_care</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink font-semibold">Anak</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">760 buku</p>
+</div>
+</a>
+</div>
+</section>
+<!-- SECTION 5: KATALOG HARIAN -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg py-16">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<h2 class="font-headline-sm text-headline-sm text-ink font-semibold tracking-tight">
+        Pilihan untuk dibaca hari ini.
+      </h2>
+<div class="bg-canvas-soft p-1 rounded-full flex gap-1 self-start sm:self-auto">
+<button class="px-5 py-2 bg-canvas text-ink rounded-full font-action text-action" type="button">
+          Terlaris
+        </button>
+<button class="px-5 py-2 text-text-muted hover:text-ink transition-colors font-action text-action" type="button">
+          Terbaru
+        </button>
+</div>
+</div>
+<!-- 4x2 Grid (8 Books) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Item 1 (Special Monthly Free Book) -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of coastal Indonesian romantic drama titled 'Senja di Pelabuhan Ratu', tranquil golden hour over Indonesian fishing boats, artistic photographic composition with refined serif title" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD79KJCnayDQxPCCjiAPuUGKTlMPsWmuoasl79lwOTunt8iPHdNc-UXmNyE4c3X1_xYPiSRk703hoV9eZqrR5dfbipI1kP9RKPs1Vn5YFf2qFlqEXA1v2cU2vTk7o64EEvKDGvOgwexPRNd023TL7sIR-pbAM6gr3EID6bHxsRZcu_vMEotQg85ufHW2Vy4Au4eYUGxyD0Hjams3CcWzigNRqOC6_oQbePdPu2F_kkcMD30bTuuO3sobQ"/>
+<div class="absolute top-2.5 left-2.5 bg-accent text-on-primary px-2.5 py-1 rounded-full font-badge-label text-badge-label">
+            Buku bulan ini
+          </div>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Senja di Pelabuhan Ratu</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Ahmad Tohari • ★ 5.0</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-accent font-semibold">Gratis</span>
+<span class="font-caption text-caption text-text-faint line-through">Rp65.000</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of practical entrepreneurship guide titled 'Memulai Usaha Mandiri', clean geometric graphic art in terracotta and black, Swiss typography and bold layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATr57CJthfhwQxN_uCk4Whaic-RmkISzO1KoraO3X5Xt-76rffYbDOq3QUGow3ROpJlGFjGgJbOZr6PlFjx0rSKMOyihv5dqWfJA9tWko-nx3-0VC_2H7IvUwuZYuRVmhV1ol1aD2YebfEeoLKb1ASGh0dOgrCY4vFNldQaFkZ63tmWE5mESc-IOTRiANi0gQaSsMoA11ceurzjRfy0hHSdPsSBOkKvIyC06bn_FslgoFT5yH49N_T8Q"/>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Memulai Usaha Mandiri</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Rhenald Kasali • ★ 4.8</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp85.000</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of martial arts historical novel titled 'Bumi Para Pendekar', silhouetted pencak silat warrior on a misty mountain ridge in Central Java, charcoal ink wash styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrp1aNhrLg99xxJ5vybsMEfjaGYVpP2lFG_6yIDiPYBCTlGyEgoNVZEV5r5n9S_QmFSr9eBHYBJtBMsRTwTYG0Ihf9FFgD9tqi9qPmljx9v4xOHsKiEW_X2QHOreQdRMzVgZCM3M-u3OL8r4HNNV7DaHXDn1UzBhv2oDlUsnrYMad76V92CVKBkhsv3yVO7eVjFtnMahMZSyurrnFAziAY4eZ_qhOTVbgef0WAlE_zjYbpWPmSGJdaVw"/>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Bumi Para Pendekar</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Pramoedya A. T. • ★ 4.9</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp92.000</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of coding textbook titled 'Belajar Python Praktis', elegant dark gray textured cover with stark white and vibrant cobalt blue code snippet formatting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxy782JnQuUjFFYPrDtP2VPgsFpIrIDRwWfi_1Klj-oYouzklxShc9Z1uDZogNtT4b09KB-dzPiB9h15re_l718hkYAOD-YdVMG-aKkBbZ-1zTqVfcWV-KNc8fHlWOYYkRapth8FoPegvgQ1pTsBAMD6fGPeH4YLi_tyCjZAnR4pXVVAg14bCDNAfnBEmqh9MtsSvJN1SzrwqbTfH4dROsPJW74uyrBOZUgXJMUlCtyxe0Ykt5GZ2j5g"/>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Belajar Python Praktis</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Sandhika Galih • ★ 4.9</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp110.000</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of critical thinking book titled 'Merawat Akal Sehat', abstract geometric brain wireframe with clear stark contrast against bone white paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX8tDqrST18blNRKb-jRuYhgC-TuNwsamRvxXPmRKNvFgDQQvUC27teaEGpoFmlEiI9EbgtlXHtcshhc56AZ0LeeSF1NmU5OCjWFMLLJoFKWWFu0zNDPox44kY4BvhXHfb3hL0r42sh_aOKH0xeD-6hHhY44n3e1j5v6XpzMxNh2eyxVIkhezSRmT73QIFkSOLgKoK7noxusngOfIBZuRdD_Bb8CXldXgf4G2hQ15uDHPRxgO_OmAJ5Q"/>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Merawat Akal Sehat</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Rocky Gerung • ★ 4.6</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp78.000</span>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of speculative Indonesian letters titled 'Surat untuk Masa Depan', stylized embossed silver seal on textured charcoal paper with elegant modern sans typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPTpbtHdPK86hoKhUUUN0O0LpMbXSZSMA0sB9RZrw6XGoTp0Mm_gqDoZw6ggNdBUza1oPKW2XqfGnkN0SM_dHRsq-ASsLHR2VcasP_jsgmMmtyct4NVLHVc5vBzAoPEgZ8aJHz-rCRjTpy9f-1RfZ3vYeWIeNir61516DwNuCTUu_sORufE7durLfXdylCycKg762XRSpUHfo5sqibiZGvRQXNzhll6K4Iw6RWLZa1jodmJ-Ky4dImqw"/>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Surat untuk Masa Depan</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Ayu Utami • ★ 4.7</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp68.000</span>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of travel essay book titled 'Kisah dari Pelosok', documentary film photograph of remote eastern Indonesian landscape and warm golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALHc_Rgw8cRlN3F3GtAo1o2a1zXAGV1MFHMeer4RixzCmDy97ajaEK2IyAqTGCFwh7cUkuoaMkFFV4EjNUqp88ivHwuSNOzyWXYeW1DoLtTjdjaov_FhcVaFhwmhZcS1bNmk7nM2Fnko19hXoiAdgNR5XQI4P3LvpFbzU1dOVLEOL_DTpKQ252UW81sW63U83jm3jYkra7BHtI4buVmnywgM4ggMGQIBv3UEEsQgAeHc8nhVRU3zvWng"/>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Kisah dari Pelosok</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Agustinus Wibowo • ★ 4.9</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp89.000</span>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="group flex flex-col cursor-pointer">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-field relative mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of modern illustrated fable book titled 'Dongeng Kancil Cerdas', charming playful woodblock print of a mouse deer navigating Indonesian jungle, pastel earthy hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWGj250yXriVRIAhD6gv9389ZtOdGs6Y161WaAjREjkLm5FXpD26hGtv0t-3Deo_VqRezUTWx8J2OL4Mfdmioc19QF0eQZPyGxFIPZOKjUx2E66muH9ZALk9tM3j8mmN8YL1wTrphPgy5toR1rZkeZ41fMeivi7l2chUFJDy2crxwRtzVYf6uUzCYuQ7yySgTsdKNommZIBN6baAT0mYHYkkwz4xbn8R_9d4oULTVixo_m-VxDr87Xww"/>
+<button aria-label="Wishlist" class="absolute top-2.5 right-2.5 w-9 h-9 bg-canvas rounded-full flex items-center justify-center text-ink hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-ink truncate font-semibold">Dongeng Kancil Cerdas</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Murti Bunanta • ★ 4.8</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-action text-action text-ink font-semibold">Rp55.000</span>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="inline-block px-8 py-3.5 bg-canvas text-ink border border-hairline rounded-full font-action text-action hover:bg-canvas-soft transition-colors" data-path="katalog" href="#">
+        Lihat semua buku
+      </a>
+</div>
+</section>
+<!-- SECTION 6: KEUNGGULAN -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg py-20">
+<h2 class="font-headline-md text-headline-md text-ink font-semibold tracking-tight text-center max-w-3xl mx-auto mb-12">
+      Dibuat agar pembaca betah dan penulis dibayar adil.
+    </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="bg-canvas-soft rounded-3xl p-8 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-canvas flex items-center justify-center text-ink mb-6">
+<span class="material-symbols-outlined text-[24px]">chrome_reader_mode</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-ink font-semibold">Reader yang nyaman.</h3>
+<p class="font-body-md text-body-md text-text-muted mt-4">
+            EPUB dan PDF di browser, progres baca lintas perangkat otomatis, bookmark, highlight kutipan favorit, tema terang/sepia/gelap yang ramah mata.
+          </p>
+</div>
+<div class="mt-8 pt-6 border-t border-hairline-soft flex items-center gap-3 text-ink">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+<span class="font-caption text-caption text-text-muted">Sinkronisasi instan ponsel &amp; laptop</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-canvas border border-hairline rounded-3xl p-8 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-field flex items-center justify-center text-ink mb-6">
+<span class="material-symbols-outlined text-[24px]">redeem</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-ink font-semibold">Voucher dan poin.</h3>
+<p class="font-body-md text-body-md text-text-muted mt-4">
+            Dapatkan poin reward di setiap transaksi pembelian, tukar poin dengan diskon tambahan saat checkout, plus voucher musiman.
+          </p>
+</div>
+<div class="mt-8 pt-6 border-t border-hairline-soft flex items-center gap-3 text-ink">
+<span class="material-symbols-outlined text-[20px]">loyalty</span>
+<span class="font-caption text-caption text-text-muted">1.000 Poin = Diskon Rp10.000</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-canvas-soft rounded-3xl p-8 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-canvas flex items-center justify-center text-ink mb-6">
+<span class="material-symbols-outlined text-[24px]">payments</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-ink font-semibold">Royalti transparan.</h3>
+<p class="font-body-md text-body-md text-text-muted mt-4">
+            Laporan ledger tercatat per transaksi secara real-time, transparansi persentase, dan tarik dana langsung ke rekening bank dari dashboard.
+          </p>
+</div>
+<div class="mt-8 pt-6 border-t border-hairline-soft flex items-center gap-3 text-ink">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-caption text-caption text-text-muted">Pencairan harian tanpa potongan gelap</span>
+</div>
+</div>
+</div>
+<!-- Statistics -->
+<div class="border-t border-hairline-soft pt-12 mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<div>
+<span class="font-headline-lg text-headline-lg text-ink font-semibold block tracking-tight">12.480</span>
+<span class="font-body-md text-body-md text-text-muted mt-2 block">Buku tersedia</span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-ink font-semibold block tracking-tight">3.250</span>
+<span class="font-body-md text-body-md text-text-muted mt-2 block">Penulis dan penerbit</span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-ink font-semibold block tracking-tight">86.000</span>
+<span class="font-body-md text-body-md text-text-muted mt-2 block">Pembaca aktif</span>
+</div>
+</div>
+</section>
+<!-- SECTION 7: UNTUK PENULIS DAN PENERBIT -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg py-20">
+<div class="max-w-2xl mb-12">
+<h2 class="font-headline-md text-headline-md text-ink font-semibold tracking-tight">
+        Terbitkan bukumu hari ini.
+      </h2>
+<p class="font-body-lead text-body-lead text-text-muted mt-3">
+        Akun penulis dan penerbit langsung aktif saat mendaftar, tanpa menunggu verifikasi.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Penulis -->
+<div class="bg-canvas border border-hairline rounded-3xl p-10 flex flex-col justify-between">
+<div>
+<span class="font-caption text-caption uppercase tracking-wider text-text-muted block mb-2">Pilihan Mandiri</span>
+<h3 class="font-headline-sm text-headline-sm text-ink font-semibold">Penulis</h3>
+<p class="font-body-md text-body-md text-text-muted mt-2 mb-8">
+            Kendalikan hak cipta karya, format buku, serta jadwal rilis secara independen.
+          </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Unggah naskah EPUB/PDF dan desain cover</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Atur diskon promo per buku secara leluasa</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Pantau grafik penjualan dan royalti harian</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Tarik dana royalti kapan saja tanpa batas minimum berbelit</span>
+</li>
+</ul>
+</div>
+<a class="w-full text-center px-8 py-3.5 mt-10 bg-canvas text-ink border border-hairline rounded-full font-action text-action hover:bg-canvas-soft transition-colors" data-path="daftar-penulis" href="#">
+          Daftar sebagai penulis
+        </a>
+</div>
+<!-- Penerbit -->
+<div class="bg-canvas-soft rounded-3xl p-10 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-caption text-caption uppercase tracking-wider text-text-muted block">Organisasi &amp; Studio</span>
+<span class="px-3 py-1 bg-accent text-on-primary rounded-full font-badge-label text-badge-label">Bagi hasil</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-ink font-semibold">Penerbit</h3>
+<p class="font-body-md text-body-md text-text-muted mt-2 mb-8">
+            Solusi korporasi penerbitan skala besar dengan pembagian multi-penulis terautomasi.
+          </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Semua fitur akun penulis</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Manajemen kemitraan &amp; split bagi hasil multi-penulis per buku</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Terbitkan voucher khusus buku imprint penerbit</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ink text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-ink">Tandai buku mitra pilihan sebagai unggulan katalog</span>
+</li>
+</ul>
+</div>
+<a class="w-full text-center px-8 py-3.5 mt-10 bg-ink text-on-primary rounded-full font-action text-action hover:opacity-90 transition-opacity" data-path="daftar-penerbit" href="#">
+          Daftar sebagai penerbit
+        </a>
+</div>
+</div>
+</section>
+<!-- SECTION 8: TESTIMONI -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg py-16">
+<h2 class="font-headline-sm text-headline-sm text-ink font-semibold tracking-tight mb-8">
+      Kata mereka yang sudah mencoba.
+    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Testi 1 -->
+<div class="bg-canvas border border-hairline-soft rounded-2xl p-6 flex flex-col justify-between">
+<p class="font-body-md text-body-md text-ink">
+          “Reader web-nya paling bersih dan responsif dibanding aplikasi buku lokal lain. Buka naskah 600 halaman tidak pernah lag.”
+        </p>
+<div class="flex items-center gap-3 mt-6 pt-4 border-t border-hairline-soft">
+<div class="w-10 h-10 rounded-full bg-canvas-soft text-ink font-semibold flex items-center justify-center shrink-0">
+            TS
+          </div>
+<div class="truncate">
+<h4 class="font-action text-action text-ink truncate font-semibold">Tania Siregar</h4>
+<span class="font-caption text-caption text-text-muted">Pembaca</span>
+</div>
+</div>
+</div>
+<!-- Testi 2 -->
+<div class="bg-canvas border border-hairline-soft rounded-2xl p-6 flex flex-col justify-between">
+<p class="font-body-md text-body-md text-ink">
+          “Sebagai penulis independen, royalti yang masuk tiap jam dan bisa ditarik tanpa minimum adalah mimpi yang jadi kenyataan.”
+        </p>
+<div class="flex items-center gap-3 mt-6 pt-4 border-t border-hairline-soft">
+<div class="w-10 h-10 rounded-full bg-canvas-soft text-ink font-semibold flex items-center justify-center shrink-0">
+            AW
+          </div>
+<div class="truncate">
+<h4 class="font-action text-action text-ink truncate font-semibold">Arya Wirawan</h4>
+<span class="font-caption text-caption text-text-muted">Penulis</span>
+</div>
+</div>
+</div>
+<!-- Testi 3 -->
+<div class="bg-canvas border border-hairline-soft rounded-2xl p-6 flex flex-col justify-between">
+<p class="font-body-md text-body-md text-ink">
+          “Split royalty multi-kontributor memudahkan tim kami membayar ilustrator dan editor tanpa rekap Excel berulang setiap bulan.”
+        </p>
+<div class="flex items-center gap-3 mt-6 pt-4 border-t border-hairline-soft">
+<div class="w-10 h-10 rounded-full bg-canvas-soft text-ink font-semibold flex items-center justify-center shrink-0">
+            MP
+          </div>
+<div class="truncate">
+<h4 class="font-action text-action text-ink truncate font-semibold">Matapena Press</h4>
+<span class="font-caption text-caption text-text-muted">Penerbit</span>
+</div>
+</div>
+</div>
+<!-- Testi 4 -->
+<div class="bg-canvas border border-hairline-soft rounded-2xl p-6 flex flex-col justify-between">
+<p class="font-body-md text-body-md text-ink">
+          “Mode sepianya sangat nyaman untuk membaca maraton di laptop saat malam. Fitur highlight kutipannya juga rapi.”
+        </p>
+<div class="flex items-center gap-3 mt-6 pt-4 border-t border-hairline-soft">
+<div class="w-10 h-10 rounded-full bg-canvas-soft text-ink font-semibold flex items-center justify-center shrink-0">
+            RP
+          </div>
+<div class="truncate">
+<h4 class="font-action text-action text-ink truncate font-semibold">Rian Pratama</h4>
+<span class="font-caption text-caption text-text-muted">Pembaca</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: CTA PENUTUP -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-lg py-20 text-center">
+<div class="max-w-2xl mx-auto flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg text-ink font-semibold tracking-tight">
+        Mulai membaca malam ini.
+      </h2>
+<p class="font-body-lead text-body-lead text-text-muted mt-4">
+        Daftar gratis dalam 30 detik dan nikmati akses koleksi buku digital Indonesia terlengkap langsung dari peramban Anda.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+<a class="px-8 py-3.5 bg-ink text-on-primary rounded-full font-action text-action hover:opacity-90 transition-opacity" data-path="daftar-gratis" href="#">
+          Daftar gratis
+        </a>
+<a class="px-8 py-3.5 bg-canvas text-ink border border-hairline rounded-full font-action text-action hover:bg-canvas-soft transition-colors" data-path="masuk" href="#">
+          Masuk
+        </a>
+</div>
+<!-- Newsletter Form -->
+<div class="w-full max-w-md mt-14">
+<form class="flex items-center bg-field rounded-full p-1.5 focus-within:ring-2 focus-within:ring-ink transition-all">
+<input class="bg-transparent border-none text-ink placeholder-text-faint px-5 py-2.5 w-full focus:outline-none font-body-md text-body-md" placeholder="Email kamu" required="" type="email"/>
+<button class="px-6 py-2.5 bg-ink text-on-primary rounded-full font-action text-action hover:opacity-90 transition-opacity shrink-0" type="submit">
+            Berlangganan
+          </button>
+</form>
+<span class="font-caption text-caption text-text-muted mt-3 block">
+          Kabar promo dan buku baru, sebulan sekali.
+        </span>
+</div>
+</div>
+</section>
+<script>
+    // Simple micro-interaction countdown timer
+    (function initCountdown() {
+      let hours = 4, mins = 38, secs = 19;
+      const hEl = document.getElementById('timer-hours');
+      const mEl = document.getElementById('timer-mins');
+      const sEl = document.getElementById('timer-secs');
+      if (!hEl || !mEl || !sEl) return;
+
+      setInterval(() => {
+        if (secs > 0) {
+          secs--;
+        } else {
+          secs = 59;
+          if (mins > 0) {
+            mins--;
+          } else {
+            mins = 59;
+            if (hours > 0) hours--;
+          }
+        }
+        hEl.textContent = String(hours).padStart(2, '0');
+        mEl.textContent = String(mins).padStart(2, '0');
+        sEl.textContent = String(secs).padStart(2, '0');
+      }, 1000);
+    })();
+  </script>
+</div></main><footer class="w-full bg-ink text-canvas rounded-t-lg pt-space-xl pb-margin-lg px-margin-lg mt-space-xl"><div class="max-w-[1440px] mx-auto"><div class="flex flex-col lg:flex-row justify-between items-start gap-space-xl pb-space-xl"><div class="max-w-xl"><span class="font-display text-display text-canvas block tracking-tighter">PerpusKita.</span><p class="font-body-lead text-body-lead text-text-faint mt-space-md">Platform digital buku untuk pembaca, penulis, dan penerbit Indonesia.</p></div><div class="grid grid-cols-2 gap-space-xl min-w-[320px]"><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-canvas mb-space-xs">Navigasi</span><a class="font-body-md text-body-md text-text-faint hover:text-canvas transition-colors" data-path="tentang" href="#">Tentang</a><a class="font-body-md text-body-md text-text-faint hover:text-canvas transition-colors" data-path="bantuan" href="#">Bantuan</a><a class="font-body-md text-body-md text-text-faint hover:text-canvas transition-colors" data-path="media-sosial" href="#">Media sosial</a></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-canvas mb-space-xs">Legalitas</span><a class="font-body-md text-body-md text-text-faint hover:text-canvas transition-colors" data-path="syarat-dan-ketentuan" href="#">Syarat dan ketentuan</a><a class="font-body-md text-body-md text-text-faint hover:text-canvas transition-colors" data-path="kebijakan-privasi" href="#">Kebijakan privasi</a></div></div></div><div class="pt-space-lg flex flex-col md:flex-row justify-between items-center gap-space-sm"><span class="font-caption text-caption text-text-faint">© 2025 PerpusKita Indonesia. Hak cipta dilindungi undang-undang.</span><div class="flex items-center gap-space-md font-caption text-caption text-text-faint"><span>Jakarta, Indonesia</span><span>•</span><span>Edisi Kurasi Digital</span></div></div></div></footer></body></html>
